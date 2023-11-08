@@ -1,0 +1,54 @@
+# Exercise 1
+
+## Question 1
+**Import a set of data "days" from STAT0002 library. Calculate the five-number summary of these data.**
+```{r}
+library(stat0002)
+# To give us a better understanding of the data imported:
+sort(days)
+fivenum(days)
+```
+Therefore, the five-number summary of the dataset is (31, 1460, 1460.5, 2921, 4422) days.
+
+## Question 2
+**Create a boxplot of these data.**
+```{r out.width='80%', fig.asp=.75, fig.align='center'}
+boxplot(days, horizontal = T, xlab = "Mystery Variable (Days)")
+```
+
+Combining the shape of this boxplot and the data summary we acquired above, the shape of the distribution of this dataset is slightly positively skewed. There are no outliers. All the data values are concluded in the boxplot. The boxplot visualizes the five-number summary as well as the location, shape, and spread of the distribution.
+
+## Question 3
+**Create histograms of these data with with different breaks.**
+```{r out.width='80%', fig.asp=.75, fig.align='center'}
+hist(days, breaks = c(0, 500, 1500, 2500, 3500, 4500), freq = F)
+hist(days, breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500), freq = F)
+```
+
+While the first histogram shows us a rough shape and distribution, the second histogram is more detailed with more breaks. We can easily identify the modes of distribution using histograms and acquire a basic shape of the distribution as well.
+
+## Question 4
+**Create a stem-and-leaf plot of the data.**
+```{r}
+stem(days)
+```
+We could conclude from this plot that the shape of this dataset follows a bimodal distribution, where a lot of values in the data fall around 1500 and 2900.
+
+## Question 5
+**Create a dot plot of the data.**
+```{r out.width='80%', fig.asp=.75, fig.align='center'}
+stripchart(days, method = "stack", at = 0, offset = 1, pch = 16, xlab = "Mysterious Variable (Days)")
+``` 
+
+The dot plot confirms our conclusion from the stem-and-leaf plot stated above.
+
+## Question 6
+**Find if there are any outliers in this dataset.**
+```{r}
+IQR <- IQR(days)
+UpperBound <- 2921 + 1.5 * IQR
+LowerBound <- 1460 - 1.5 * IQR
+UpperBound
+LowerBound
+```
+All the values from the data fall in the range $\in [-710.125, 5091.125]$. Therefore, there aren’t any outliers. Since 2922 days are approximately equivalent to 8 years, these data might represent the time it takes for people to get a Ph.D., the 8-year cycle of Venus, or the length of the presidency of the United States.

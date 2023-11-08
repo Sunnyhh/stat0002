@@ -1,0 +1,61 @@
+# Exercise 2
+
+## Question 1 - Location
+**(a) Sample Mean**
+$$\begin{aligned}
+\bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \\
+\bar{y} & =\frac{1}{n} \sum_{i=1}^{n} y_i \\
+         &=\frac{1}{n} \sum_{i=1}^{n} (ax_i + b) \\
+         &=\frac{1}{n}(a\frac{1}{n} \sum_{i=1}^{n} x_i + bn) \\
+         &=\frac{a}{n} \sum_{i=1}^{n} x_i + b \\
+\therefore \bar{y} &= a\bar{x} + b
+\end{aligned}$$
+
+**(b) Sample Median: ** The order of the values in the dataset sorted will remain the same after the transformation. As a result, $y_{1/2} = ax_{1/2} + b$. \
+**(c) Summary: ** The above results about sample mean and sample median are reasonable based on mathematical proof.
+
+## Question 2 - Spread
+**(a) Standard Deviation**
+$$\begin{aligned}
+S_x &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \\
+S_y &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2} \\
+S_y &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (ax_i + b - (a\bar{x} + b))^2} \\
+    &= \sqrt{\frac{a^2}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \\
+    &= a \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \\
+\therefore S_y &= a S_x 
+\end{aligned}$$
+
+**(b) Sample Interquartile Range**
+$$\begin{aligned} 
+q_U^x - q_L^x &= x_{\frac{3}{4}(n+1)} - x_{\frac{1}{4}(n+1)} \\
+q_U^y - q_L^y &= y_{\frac{3}{4}(n+1)} - y_{\frac{1}{4}(n+1)} \\
+q_U^y - q_L^y &= ax_{\frac{3}{4}(n+1)} + b - (ax_{\frac{1}{4}(n+1)} + b) \\
+q_U^y - q_L^y &= a(x_{\frac{3}{4}(n+1)} - x_{\frac{1}{4}(n+1)}) \\
+\therefore q_U^y - q_L^y &= a(q_U^x - q_L^x)
+\end{aligned}$$
+
+**(c) Summary: ** The above results about sample interquartile range and standard deviation make sense based on mathematical proof.
+
+## Question 3 - Shape
+**(a) Standardized Sample Skewnewss**
+$$\require{cancel}
+\begin{aligned} 
+Skewness_x &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{S_x^3} \\
+Skewness_y &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (y_i - \bar{y})^3}{S_y^3} \\
+Skewness_y &= \frac{1}{n} \cdot \frac{\cancel{a^3} \cdot \sum_{i=1}^{n} (x_i - \bar{x})^3}{\cancel{a^3} \cdot S_x^3} \\
+\therefore Skewness_y &= Skewness_x
+\end{aligned}$$
+**(b) Sample Quartile Skewness**
+$$\require{cancel}
+\begin{aligned}
+Skewness_x &= \frac{(q_U^x - m_x) - (m_x - q_L^x)}{q_U^x - q_L^x} \\
+Skewness_y &= \frac{(q_U^y - m_y) - (m_y - q_L^y)}{q_U^y - q_L^y} \\
+Skewness_y &= \frac{\cancel{a}((q_U^x - m_x) - (m_x - q_L^x))}{\cancel{a}(q_U^x - q_L^x)} \\
+\therefore Skewness_y &= Skewness_x
+\end{aligned}$$
+**(c) Summary: ** The above results about standardized sample skewness and sample quartile skewness are correct based on mathematical proof.
+
+
+## Question 4 - About Sample Size
+**Explain the reason why these summary statstics require $n \geq 3$.** \
+The precondition is $n \geq 3$ because when the sample size is too small, it’s meaningless to investigate summary statistics. There's nothing to investigate about a set of variables with only one or two data. A smaller sample size also leads to increasing percentage uncertainty while calculating the data. Finally, $n \neq 1$ also because that the process of calculating standard deviation requires we use $(n-1)$ as a denominator, and 0 can’t be a denominator.

@@ -1,0 +1,72 @@
+# Exercise 5
+
+## Question 1
+**Let X be a random variable with mean $\mu$ and (positive) variance $\sigma^2$. Find the mean and variance of the random variable $Y = \frac{X - \mu}{\sigma}$.** \
+**Mean:**
+$$\because Y = \frac{X - \mu}{\sigma}$$ 
+$$\therefore X = \sigma \cdot Y + \mu$$ 
+$$\therefore \mathbb{E}(X) = \sigma \cdot \mathbb{E}(Y) + \mu$$
+$$\therefore \mathbb{E}(Y) = \frac{\mathbb{E}(X) - \mu}{\sigma}$$ 
+$$\because \mathbb{E}(X) = \mu$$ 
+$$\therefore \mathbb{E}(Y) = 0$$ 
+**Variance:**
+$$\because X = \sigma \cdot Y + \mu$$
+$$\therefore \mathbb{Var}(X) = \sigma^2 \cdot \mathbb{Var}(Y)$$ 
+$$\because \mathbb{Var}(X) = \sigma^2$$ 
+$$\therefore \mathbb{Var}(Y) = 1$$ 
+Therefore, the mean and variance of the random variable Y is 0 and 1. 
+
+## Question 2
+**Let X be the number of heads in 2 independent tosses of a fair coin.** \
+**(a) Find $\mathbb{E}(\frac{1}{1+X})$.** \
+Let random variable $Y = \frac{1}{1+X}$, \
+Possible outcomes:\
+
+```{r echo = FALSE, results = "asis"}
+options(kableExtra.latex.load_packages = FALSE)
+library(kableExtra)
+library(knitr)
+library(FRACTION)
+df <- matrix(c(0, 1, 1, fra(1/4), fra(1/4), 1, fra(1/2), fra(1/4), fra(1/2), fra(1/2), 2, fra(1/3), fra(1/9), fra(1/4), fra(1/4)),
+             nrow = 5)
+rownames(df) = c("$x$", "$y$", "$y^2$", "$P(X=x)$", "$P(Y=y)$")
+kable(df, format = "html", booktabs = TRUE, escape = FALSE, align = "cccc") %>%
+  kable_styling(latex_options = "striped", position = "center") 
+```
+$$\therefore \mathbb{E}(\frac{1}{1+X}) = \sum (\frac{1}{1+x_i})P(X = x_i) = \mathbb{E}(Y) = 1 \cdot \frac{1}{4} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{4} = \frac{7}{12}$$ 
+
+**(b) Show that $\mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}$.**
+$$\mathbb{E}(X) = 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{4} = 1$$
+$$\therefore \frac{1}{1+\mathbb{E}(X)} = \frac{1}{2}$$
+$$\because \mathbb{E}(\frac{1}{1+X}) = \frac{7}{12}$$
+$$\because \frac{7}{12} \neq \frac{1}{2}$$
+$$\therefore \mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}$$ 
+
+
+
+**(c) Find $\mathbb{Var}(\frac{1}{1+X})$.**
+$$\mathbb{E}((\frac{1}{1+X})^2) = 1 \cdot \frac{1}{4} + \frac{1}{4} \cdot \frac{1}{2} + \frac{1}{9} \cdot \frac{1}{4} = \frac{29}{72}$$ 
+$$\because \mathbb{Var}(\frac{1}{1+X}) = \mathbb{E}((\frac{1}{1+X})^2) - (\mathbb{E}(\frac{1}{1+X}))^2 = \frac{29}{72} - (\frac{7}{12})^2 = \frac{1}{16}$$ 
+
+## Question 3
+**Let $X_H$ be be the number of heads and $X_T$ be the number of tails obtained in 4 independent tosses of a fair coin. You are given that $\mathbb{E}(X_H) = 2$ and $\mathbb{Var}(X_H) = 1$.** \
+**(a) Find $\mathbb{E}(X_T)$.**
+$$X_H + X_T = 4$$
+$$X_T = 4 - E_H$$
+$$\begin{aligned}
+\mathbb{E}(X_T) &= \mathbb{E}(4 - X_H) \\
+                  &= 4 - \mathbb{E}(X_H) \\
+                  &= 4 - 2 \\
+\end{aligned}$$
+$$\therefore \mathbb{E}(X_T) = 2$$
+
+**(b) Show that $X_H - X_T = 2 \cdot X_H -4$.**
+$$\because X_H + X_T = 4$$ 
+$$\therefore X_T = 4 - X_H$$ 
+$$\therefore X_H - X_T = X_H - (4 - X_H)$$ 
+$$\therefore X_H - X_T = 2 \cdot X_H - 4$$ 
+
+**(c) Hence, or otherwise, find $\mathbb{E}(X_H - X_T)$ and $\mathbb{Var}(X_H - X_T)$.**
+$$\mathbb{E}(X_H - X_T) = \mathbb{E}(2 \cdot X_H - 4) = 2 \cdot \mathbb{E}(X_H) -4 = 0$$ 
+$$\mathbb{Var}(X_H - X_T) = \mathbb{Var}(2 \cdot X_H - 4) = 2^2 \cdot \mathbb{Var}(X_H) = 4$$
+
