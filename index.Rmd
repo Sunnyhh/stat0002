@@ -2,8 +2,8 @@
 title: "STAT0002 Introduction to Probability and Statistics Weekly Exercises"
 author: "Ge Li (Sunny)"
 date: "November 3 2023"
-site: bookdown::bookdown_site
 output: bookdown::gitbook
+site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
@@ -14,4 +14,4 @@ github-repo: sunnyhh/stat0002
 link-citations: yes
 ---
 # Preface {.unnumbered}
-This document is used to document my assignments and weekly exercises of STAT0002.
+This document is used to document my assignments and weekly exercises of STAT0002.ge

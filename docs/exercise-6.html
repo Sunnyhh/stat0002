@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 4 Exercise 4 | STAT0002 Introduction to Probability and Statistics Weekly Exercises</title>
+  <title>Week 6 Exercise 6 | STAT0002 Introduction to Probability and Statistics Weekly Exercises</title>
   <meta name="description" content="This is my documentation of my assignments and exercises of STAT0002." />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 4 Exercise 4 | STAT0002 Introduction to Probability and Statistics Weekly Exercises" />
+  <meta property="og:title" content="Week 6 Exercise 6 | STAT0002 Introduction to Probability and Statistics Weekly Exercises" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is my documentation of my assignments and exercises of STAT0002." />
   <meta name="github-repo" content="sunnyhh/stat0002" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 4 Exercise 4 | STAT0002 Introduction to Probability and Statistics Weekly Exercises" />
+  <meta name="twitter:title" content="Week 6 Exercise 6 | STAT0002 Introduction to Probability and Statistics Weekly Exercises" />
   
   <meta name="twitter:description" content="This is my documentation of my assignments and exercises of STAT0002." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercise-3.html"/>
-<link rel="next" href="exercise-5.html"/>
+<link rel="prev" href="exercise-5.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -203,37 +203,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercise-4" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Week 4</span> Exercise 4<a href="exercise-4.html#exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="question-1-2" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Question 1<a href="exercise-4.html#question-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong><span class="math inline">\(B_1\)</span> and <span class="math inline">\(B_2\)</span> are mutually exclusive, exhaustive events such that <span class="math inline">\(P(B_1) = 0.05\)</span>. <span class="math inline">\(A\)</span> is an event such that <span class="math inline">\(P(A \mid B_1) = 0.75\)</span> and <span class="math inline">\(P(A \mid B_2) = 0.50\)</span>.</strong><br />
-<strong>(a) Use the law of total probability to calculate <span class="math inline">\(P(A)\)</span>.</strong><br />
-<span class="math display">\[P(A) = P(A \mid B_1)P(B_1) + P(A \mid B_2)P(B_2) = 0.75 * 0.05. + 0.50 * (1 - 0.05) = 0.5125\]</span>
-<strong>(b) Use Bayes’ Theorem to calculate <span class="math inline">\(P(B_1 \mid A)\)</span>.</strong><br />
-<span class="math display">\[P(B_1 \mid A) = \frac{P(A \mid B_1) \cdot P(B_1)}{P(A)} = \frac{0.75 \cdot 0.05}{0.5125} = 0.07317\]</span></p>
+<div id="exercise-6" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Week 6</span> Exercise 6<a href="exercise-6.html#exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="question-1-4" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Question 1<a href="exercise-6.html#question-1-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A machine makes components whose lengths must be between the specification limits of 6.45cm and 6.55cm. Let L denote the length of a randomly chosen componet made by the machine. Suppose that L has a normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Based on measurements of a very large number of components it is found that <span class="math inline">\(5\%\)</span> of components are longer than 6.55cm and <span class="math inline">\(5\%\)</span> of components are shorter than 6.45cm.</p>
+<p><strong>(a)</strong> Find <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>
+<span class="math display">\[P(X &gt; 6.55) = 1 - \Phi(\frac{6.55 - \mu}{\sigma}) = 0.05\]</span>
+<span class="math display">\[P(X &lt; 6.45) = \Phi(\frac{6.45 - \mu}{\sigma}) = 0.05\]</span>
+By inspecting the Normal Distribution Function table,
+<span class="math display">\[z = \frac{6.55 - \mu}{\sigma} = 1.6449\]</span>
+<span class="math display">\[\therefore \mu = 6.55 - 1.6449 \sigma\]</span>
+Substitute this relationship into the second equation,
+<span class="math display">\[\frac{6.45 - (6.55 - 1.6449 \sigma)}{\sigma} = -1.6449\]</span>
+<span class="math display">\[2 * 1.6449 \sigma = 0.1\]</span>
+<span class="math display">\[\sigma = 0.0304\]</span>
+<span class="math display">\[\therefore \mu = 6.5, \sigma^2 = 0.001\]</span></p>
+<p><strong>(b)</strong> Consider the next 100 components made by the machine. What is the distribution of the number of these components that have a length between the specification limits? State any extra assumptions that you make.</p>
+<p>Let X denote the length of the component made by the machine, <span class="math inline">\(X \sim B(100, 0.9)\)</span>. The number of these components that have a length between the specification limits is follows a binomial distribution considering it satisfies the following requirements:</p>
+<ul>
+<li>The total number of observations is fixed at 100 components.</li>
+<li>Each observation is independent and has 2 outcomes - <span class="math inline">\(X\)</span> falls in the specification limits or not.</li>
+<li>The probability of the length of each component falling in the specification range is fixed at <span class="math inline">\(0.9\)</span>.</li>
+</ul>
 </div>
-<div id="question-2-2" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Question 2<a href="exercise-4.html#question-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In a population, 5% of people have high blood pressure. Of people with high blood pressure, 75% drink alcohol whereas only 50% of people without high blood pressure drink alcohol. What percentage of drinkers of alcohol have high blood pressure?<br />
-</p>
-<p>Let event <span class="math inline">\(B_1\)</span> represent people having high blood pressure in the population, whereas event <span class="math inline">\(B_2\)</span> represents people without high blood pressure in this population.
-<span class="math display">\[\therefore P(B_1) = 0.05, \ P(B_2) = 0.95.\]</span>
-Let event <span class="math inline">\(A\)</span> represent people who drink alcohol. Of people with high blood pressure, 75% drink alcohol while only 50% of people without high blood pressure drink alcohol.
-<span class="math display">\[\therefore P(A \mid B_1) = 0.75, \ P(A \mid B_2) = 0.50.\]</span>
-Therefore, the percentage of alcohol drinkers having high blood pressure can be interpreted as <span class="math inline">\(PA(B_1 \mid A)\)</span>.
-<span class="math display">\[P(B_1 \mid A) = \frac{P(A \mid B_1) \cdot P(B_1))}{P(A)} = \frac{0.75 \cdot 0.05}{0.5125} = 0.07317\]</span></p>
-</div>
-<div id="question-3-2" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Question 3<a href="exercise-4.html#question-3-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are two events with <span class="math inline">\(P(A) &gt; 0\)</span> and <span class="math inline">\(P(B) &gt; 0\)</span>. Suppose, in addition, that <span class="math inline">\(P(A \mid B) &lt; P(A)\)</span>. Using Bayes’ Theorem, or otherwise, show that <span class="math inline">\(P(B \mid A) &lt; P(B\)</span>. Interpret this result using words.
-<span class="math inline">\(\require{cancel}\)</span>
-<span class="math display">\[P(A \mid B) &lt; P(A)\]</span>
-<span class="math display">\[\frac{P(B \mid A) \cdot P(A)}{P(B)} &lt; P(B)\]</span>
-<span class="math display">\[\because P(A) &gt; 0, P(B) &gt; 0\]</span>
-<span class="math display">\[\therefore \frac{P(B \mid A) \cdot \cancel{P(B)} \cdot \cancel{P(A)}}{\cancel{P(B)} \cdot \cancel{P(A)}} &lt; \frac{\cancel{P(A)} \cdot P(B)}{\cancel{P(A)}}\]</span>
-<span class="math display">\[\therefore P(B \mid A) &lt; P(B)\]</span>
-Interpretation: the conditional probability will always be less than or at least equal to the total proabability of an event.</p>
+<div id="question-2-4" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Question 2<a href="exercise-6.html#question-2-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose that <span class="math inline">\(U\)</span> is uniformly distributed over <span class="math inline">\((0,1)\)</span>, i.e. <span class="math inline">\(U \sim U(0,1)\)</span>. Let <span class="math inline">\(X = -\frac{1}{\lambda}\ln{U}\)</span>, where <span class="math inline">\(\lambda &gt; 0\)</span>.</p>
+<p><strong>(a)</strong> Find the c.d.f <span class="math inline">\(F_x(x) = P(X \leq x)\)</span> of X.
+<span class="math display">\[\begin{align}
+  F_x(x) &amp;= P(X \leq x) \\
+  &amp;= P(-\frac{1}{\lambda}\ln{U} \leq x) \\
+         &amp;= P(U \geq e^{-\lambda x}) \\
+         &amp;= 1 - e^{-\lambda x}
+\end{align}\]</span></p>
+<p><strong>(b)</strong> Find the p.d.f <span class="math inline">\(f_x(x)\)</span> of X.
+<span class="math display">\[\begin{align}
+  f_x(x) &amp;= \frac{d}{dx} (F_x(x)) \\
+         &amp;= \frac{d}{dx} (1 - e^{-\lambda x}) \\
+         &amp;= \lambda e^{-\lambda x}
+\end{align}\]</span></p>
+<strong>(c)</strong> Name the distribution of X.
+<center>
+<span class="math inline">\(X \sim Exp(\lambda)\)</span> <br>
+The random variable X follows an Exponential Distribution.
+</center>
+<p><strong>(d)</strong> Find the mean, median, and mode of X.
+<span class="math display">\[Mean = \mathbb{E}[X] = \frac{1}{\lambda}\]</span>
+<span class="math display">\[Median = \mathbb{m}[X] = \frac{\ln{2}}{\lambda}\]</span>
+<span class="math display">\[Mode = 0\]</span></p>
 
 </div>
 </div>
@@ -242,8 +261,8 @@ Interpretation: the conditional probability will always be less than or at least
           </div>
         </div>
       </div>
-<a href="exercise-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercise-5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exercise-5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -274,7 +293,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sunnyhh/stat0002/edit/main/04-Exercise-4.Rmd",
+"link": "https://github.com/sunnyhh/stat0002/edit/main/06-Exercise-6.Rmd",
 "text": "Edit"
 },
 "history": {

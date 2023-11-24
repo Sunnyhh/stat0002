@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="This is my documentation of my assignments and exercises of STAT0002." />
   
 
-<meta name="author" content="Ge Li (Sunny) - Student No. 23016751" />
+<meta name="author" content="Ge Li (Sunny)" />
 
 
 
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="exercise-4.html"/>
-
+<link rel="next" href="exercise-6.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -59,7 +59,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -178,6 +178,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="exercise-5.html"><a href="exercise-5.html#question-2-3"><i class="fa fa-check"></i><b>5.2</b> Question 2</a></li>
 <li class="chapter" data-level="5.3" data-path="exercise-5.html"><a href="exercise-5.html#question-3-3"><i class="fa fa-check"></i><b>5.3</b> Question 3</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="exercise-6.html"><a href="exercise-6.html"><i class="fa fa-check"></i><b>6</b> Exercise 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="exercise-6.html"><a href="exercise-6.html#question-1-4"><i class="fa fa-check"></i><b>6.1</b> Question 1</a></li>
+<li class="chapter" data-level="6.2" data-path="exercise-6.html"><a href="exercise-6.html#question-2-4"><i class="fa fa-check"></i><b>6.2</b> Question 2</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -202,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Week 5</span> Exercise 5<a href="exercise-5.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="question-1-3" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Question 1<a href="exercise-5.html#question-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Let X be a random variable with mean <span class="math inline">\(\mu\)</span> and (positive) variance <span class="math inline">\(\sigma^2\)</span>. Find the mean and variance of the random variable <span class="math inline">\(Y = \frac{X - \mu}{\sigma}\)</span>.</strong><br />
+<p>Let X be a random variable with mean <span class="math inline">\(\mu\)</span> and (positive) variance <span class="math inline">\(\sigma^2\)</span>. Find the mean and variance of the random variable <span class="math inline">\(Y = \frac{X - \mu}{\sigma}\)</span>.<br />
 <strong>Mean:</strong>
 <span class="math display">\[\because Y = \frac{X - \mu}{\sigma}\]</span>
 <span class="math display">\[\therefore X = \sigma \cdot Y + \mu\]</span>
@@ -219,8 +224,8 @@ Therefore, the mean and variance of the random variable Y is 0 and 1.</p>
 </div>
 <div id="question-2-3" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Question 2<a href="exercise-5.html#question-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Let X be the number of heads in 2 independent tosses of a fair coin.</strong><br />
-<strong>(a) Find <span class="math inline">\(\mathbb{E}(\frac{1}{1+X})\)</span>.</strong><br />
+<p>Let X be the number of heads in 2 independent tosses of a fair coin.<br />
+<strong>(a)</strong> Find <span class="math inline">\(\mathbb{E}(\frac{1}{1+X})\)</span>.<br />
 Let random variable <span class="math inline">\(Y = \frac{1}{1+X}\)</span>,<br />
 Possible outcomes:<br />
 </p>
@@ -299,20 +304,20 @@ Possible outcomes:<br />
 </tbody>
 </table>
 <p><span class="math display">\[\therefore \mathbb{E}(\frac{1}{1+X}) = \sum (\frac{1}{1+x_i})P(X = x_i) = \mathbb{E}(Y) = 1 \cdot \frac{1}{4} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{4} = \frac{7}{12}\]</span></p>
-<p><strong>(b) Show that <span class="math inline">\(\mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}\)</span>.</strong>
+<p><strong>(b)</strong> Show that <span class="math inline">\(\mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}\)</span>.<br />
 <span class="math display">\[\mathbb{E}(X) = 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{4} = 1\]</span>
 <span class="math display">\[\therefore \frac{1}{1+\mathbb{E}(X)} = \frac{1}{2}\]</span>
 <span class="math display">\[\because \mathbb{E}(\frac{1}{1+X}) = \frac{7}{12}\]</span>
 <span class="math display">\[\because \frac{7}{12} \neq \frac{1}{2}\]</span>
 <span class="math display">\[\therefore \mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}\]</span></p>
-<p><strong>(c) Find <span class="math inline">\(\mathbb{Var}(\frac{1}{1+X})\)</span>.</strong>
+<p><strong>(c)</strong> Find <span class="math inline">\(\mathbb{Var}(\frac{1}{1+X})\)</span>.<br />
 <span class="math display">\[\mathbb{E}((\frac{1}{1+X})^2) = 1 \cdot \frac{1}{4} + \frac{1}{4} \cdot \frac{1}{2} + \frac{1}{9} \cdot \frac{1}{4} = \frac{29}{72}\]</span>
 <span class="math display">\[\because \mathbb{Var}(\frac{1}{1+X}) = \mathbb{E}((\frac{1}{1+X})^2) - (\mathbb{E}(\frac{1}{1+X}))^2 = \frac{29}{72} - (\frac{7}{12})^2 = \frac{1}{16}\]</span></p>
 </div>
 <div id="question-3-3" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Question 3<a href="exercise-5.html#question-3-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Let <span class="math inline">\(X_H\)</span> be be the number of heads and <span class="math inline">\(X_T\)</span> be the number of tails obtained in 4 independent tosses of a fair coin. You are given that <span class="math inline">\(\mathbb{E}(X_H) = 2\)</span> and <span class="math inline">\(\mathbb{Var}(X_H) = 1\)</span>.</strong><br />
-<strong>(a) Find <span class="math inline">\(\mathbb{E}(X_T)\)</span>.</strong>
+<p>Let <span class="math inline">\(X_H\)</span> be be the number of heads and <span class="math inline">\(X_T\)</span> be the number of tails obtained in 4 independent tosses of a fair coin. You are given that <span class="math inline">\(\mathbb{E}(X_H) = 2\)</span> and <span class="math inline">\(\mathbb{Var}(X_H) = 1\)</span>.<br />
+<strong>(a)</strong> Find <span class="math inline">\(\mathbb{E}(X_T)\)</span>.<br />
 <span class="math display">\[X_H + X_T = 4\]</span>
 <span class="math display">\[X_T = 4 - E_H\]</span>
 <span class="math display">\[\begin{aligned}
@@ -321,12 +326,12 @@ Possible outcomes:<br />
                   &amp;= 4 - 2 \\
 \end{aligned}\]</span>
 <span class="math display">\[\therefore \mathbb{E}(X_T) = 2\]</span></p>
-<p><strong>(b) Show that <span class="math inline">\(X_H - X_T = 2 \cdot X_H -4\)</span>.</strong>
+<p><strong>(b)</strong> Show that <span class="math inline">\(X_H - X_T = 2 \cdot X_H -4\)</span>.<br />
 <span class="math display">\[\because X_H + X_T = 4\]</span>
 <span class="math display">\[\therefore X_T = 4 - X_H\]</span>
 <span class="math display">\[\therefore X_H - X_T = X_H - (4 - X_H)\]</span>
 <span class="math display">\[\therefore X_H - X_T = 2 \cdot X_H - 4\]</span></p>
-<p><strong>(c) Hence, or otherwise, find <span class="math inline">\(\mathbb{E}(X_H - X_T)\)</span> and <span class="math inline">\(\mathbb{Var}(X_H - X_T)\)</span>.</strong>
+<p><strong>(c)</strong> Hence, or otherwise, find <span class="math inline">\(\mathbb{E}(X_H - X_T)\)</span> and <span class="math inline">\(\mathbb{Var}(X_H - X_T)\)</span>.<br />
 <span class="math display">\[\mathbb{E}(X_H - X_T) = \mathbb{E}(2 \cdot X_H - 4) = 2 \cdot \mathbb{E}(X_H) -4 = 0\]</span>
 <span class="math display">\[\mathbb{Var}(X_H - X_T) = \mathbb{Var}(2 \cdot X_H - 4) = 2^2 \cdot \mathbb{Var}(X_H) = 4\]</span></p>
 
@@ -337,8 +342,8 @@ Possible outcomes:<br />
           </div>
         </div>
       </div>
-<a href="exercise-4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="exercise-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

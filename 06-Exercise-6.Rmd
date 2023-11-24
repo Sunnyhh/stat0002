@@ -1,0 +1,55 @@
+# Exercise 6
+
+## Question 1 
+A machine makes components whose lengths must be between the specification limits of 6.45cm and 6.55cm. Let L denote the length of a randomly chosen componet made by the machine. Suppose that L has a normal distribution with mean $\mu$ and variance $\sigma^2$.
+
+Based on measurements of a very large number of components it is found that $5\%$ of components are longer than 6.55cm and $5\%$ of components are shorter than 6.45cm.
+
+**(a)** Find $\mu$ and $\sigma^2$
+$$P(X > 6.55) = 1 - \Phi(\frac{6.55 - \mu}{\sigma}) = 0.05$$
+$$P(X < 6.45) = \Phi(\frac{6.45 - \mu}{\sigma}) = 0.05$$
+By inspecting the Normal Distribution Function table,
+$$z = \frac{6.55 - \mu}{\sigma} = 1.6449$$
+$$\therefore \mu = 6.55 - 1.6449 \sigma$$
+Substitute this relationship into the second equation,
+$$\frac{6.45 - (6.55 - 1.6449 \sigma)}{\sigma} = -1.6449$$
+$$2 * 1.6449 \sigma = 0.1$$
+$$\sigma = 0.0304$$
+$$\therefore \mu = 6.5, \sigma^2 = 0.001$$
+
+**(b)** Consider the next 100 components made by the machine. What is the distribution of the number of these components that have a length between the specification limits? State any extra assumptions that you make.
+
+Let X denote the length of the component made by the machine, $X \sim B(100, 0.9)$. The number of these components that have a length between the specification limits is follows a binomial distribution considering it satisfies the following requirements: 
+
+* The total number of observations is fixed at 100 components.
+* Each observation is independent and has 2 outcomes - $X$ falls in the specification limits or not.
+* The probability of the length of each component falling in the specification range is fixed at $0.9$.
+
+## Question 2
+Suppose that $U$ is uniformly distributed over $(0,1)$, i.e. $U \sim U(0,1)$. Let $X = -\frac{1}{\lambda}\ln{U}$, where $\lambda > 0$.
+
+**(a)** Find the c.d.f $F_x(x) = P(X \leq x)$ of X.
+$$\begin{align}
+  F_x(x) &= P(X \leq x) \\ 
+  &= P(-\frac{1}{\lambda}\ln{U} \leq x) \\
+         &= P(U \geq e^{-\lambda x}) \\
+         &= 1 - e^{-\lambda x}
+\end{align}$$
+
+**(b)** Find the p.d.f $f_x(x)$ of X.
+$$\begin{align}
+  f_x(x) &= \frac{d}{dx} (F_x(x)) \\
+         &= \frac{d}{dx} (1 - e^{-\lambda x}) \\
+         &= \lambda e^{-\lambda x}
+\end{align}$$
+
+**(c)** Name the distribution of X.
+<center>
+  $X \sim Exp(\lambda)$ <br>
+  The random variable X follows an Exponential Distribution. 
+</center>
+
+**(d)** Find the mean, median, and mode of X. 
+  $$Mean = \mathbb{E}[X] = \frac{1}{\lambda}$$ 
+  $$Median = \mathbb{m}[X] = \frac{\ln{2}}{\lambda}$$
+  $$Mode = 0$$
