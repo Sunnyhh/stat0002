@@ -29,19 +29,47 @@ Let X denote the length of the component made by the machine, $X \sim B(100, 0.9
 Suppose that $U$ is uniformly distributed over $(0,1)$, i.e. $U \sim U(0,1)$. Let $X = -\frac{1}{\lambda}\ln{U}$, where $\lambda > 0$.
 
 **(a)** Find the c.d.f $F_x(x) = P(X \leq x)$ of X.
+The c.d.f of a $U(0,1)$ distribution,
+$$
+\begin{equation}
+  F_U(u) = P(U \leq u) = 
+  \begin{cases}
+    0   &   u \leq 0 \\
+    u   &   0 < u \leq 1 \\
+    1   &   u \geq 1
+  \end{cases}
+\end{equation}
+$$
+As a result, for $x \geq 0$,
 $$\begin{align}
   F_x(x) &= P(X \leq x) \\ 
   &= P(-\frac{1}{\lambda}\ln{U} \leq x) \\
          &= P(U \geq e^{-\lambda x}) \\
          &= 1 - e^{-\lambda x}
 \end{align}$$
+Therefore, 
+$$
+\begin{equation}
+  F_X(x) = 
+  \begin{cases}
+    0   &   x < 0 \\
+    1 - e^{-\lambda x}    &   x \geq 0
+  \end{cases}
+\end{equation}
+$$
 
 **(b)** Find the p.d.f $f_x(x)$ of X.
-$$\begin{align}
-  f_x(x) &= \frac{d}{dx} (F_x(x)) \\
-         &= \frac{d}{dx} (1 - e^{-\lambda x}) \\
-         &= \lambda e^{-\lambda x}
-\end{align}$$
+$$f_x(x) = \frac{d}{dx} [F_x(x)] = \frac{d}{dx} (1 - e^{-\lambda x}) = \lambda e^{-\lambda x}, \ \text{where } x \geq 0$$
+Therefore, 
+$$
+\begin{equation}
+  f_X(x) = 
+  \begin{cases}
+    0   &   x < 0 \\
+    \lambda e^{-\lambda x}   &   x \geq 0
+  \end{cases}
+\end{equation}
+$$
 
 **(c)** Name the distribution of X.
 <center>
@@ -50,6 +78,7 @@ $$\begin{align}
 </center>
 
 **(d)** Find the mean, median, and mode of X. 
-  $$Mean = \mathbb{E}[X] = \frac{1}{\lambda}$$ 
-  $$Median = \mathbb{m}[X] = \frac{\ln{2}}{\lambda}$$
-  $$Mode = 0$$
+  $$\text{Mean} = \mathbb{E}[X] = \int_{-\infty}^{\infty} xf_X(x) \,dx = \int_{-\infty}^{\infty} x \lambda e^{-\lambda x} \,dx = \frac{1}{\lambda}$$ 
+  $$F_X(\text{median}[x]) = 1 - e^{-\lambda \cdot \text{median}[x]}= \frac{1}{2}$$
+  $$\therefore \text{Median} = \frac{\ln{2}}{\lambda}$$
+  $$\text{Mode} = 0$$
