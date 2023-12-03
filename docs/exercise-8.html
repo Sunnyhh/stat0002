@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 7 Exercise 8 | STAT0002 Introduction to Probability and Statistics Weekly Exercises</title>
+  <meta name="description" content="This is my documentation of my assignments and exercises of STAT0002." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 7 Exercise 8 | STAT0002 Introduction to Probability and Statistics Weekly Exercises" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is my documentation of my assignments and exercises of STAT0002." />
+  <meta name="github-repo" content="sunnyhh/stat0002" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 7 Exercise 8 | STAT0002 Introduction to Probability and Statistics Weekly Exercises" />
+  
+  <meta name="twitter:description" content="This is my documentation of my assignments and exercises of STAT0002." />
+  
+
+<meta name="author" content="Ge Li (Sunny)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-6.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://sunnyhh.github.io/stat0002">STAT0002 EXERCISES</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="exercise-1.html"><a href="exercise-1.html"><i class="fa fa-check"></i><b>1</b> Exercise 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="exercise-1.html"><a href="exercise-1.html#question-1"><i class="fa fa-check"></i><b>1.1</b> Question 1</a></li>
+<li class="chapter" data-level="1.2" data-path="exercise-1.html"><a href="exercise-1.html#question-2"><i class="fa fa-check"></i><b>1.2</b> Question 2</a></li>
+<li class="chapter" data-level="1.3" data-path="exercise-1.html"><a href="exercise-1.html#question-3"><i class="fa fa-check"></i><b>1.3</b> Question 3</a></li>
+<li class="chapter" data-level="1.4" data-path="exercise-1.html"><a href="exercise-1.html#question-4"><i class="fa fa-check"></i><b>1.4</b> Question 4</a></li>
+<li class="chapter" data-level="1.5" data-path="exercise-1.html"><a href="exercise-1.html#question-5"><i class="fa fa-check"></i><b>1.5</b> Question 5</a></li>
+<li class="chapter" data-level="1.6" data-path="exercise-1.html"><a href="exercise-1.html#question-6"><i class="fa fa-check"></i><b>1.6</b> Question 6</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exercise-2.html"><a href="exercise-2.html"><i class="fa fa-check"></i><b>2</b> Exercise 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exercise-2.html"><a href="exercise-2.html#question-1---location"><i class="fa fa-check"></i><b>2.1</b> Question 1 - Location</a></li>
+<li class="chapter" data-level="2.2" data-path="exercise-2.html"><a href="exercise-2.html#question-2---spread"><i class="fa fa-check"></i><b>2.2</b> Question 2 - Spread</a></li>
+<li class="chapter" data-level="2.3" data-path="exercise-2.html"><a href="exercise-2.html#question-3---shape"><i class="fa fa-check"></i><b>2.3</b> Question 3 - Shape</a></li>
+<li class="chapter" data-level="2.4" data-path="exercise-2.html"><a href="exercise-2.html#question-4---about-sample-size"><i class="fa fa-check"></i><b>2.4</b> Question 4 - About Sample Size</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="exercise-3.html"><a href="exercise-3.html"><i class="fa fa-check"></i><b>3</b> Exercise 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="exercise-3.html"><a href="exercise-3.html#question-1-1"><i class="fa fa-check"></i><b>3.1</b> Question 1</a></li>
+<li class="chapter" data-level="3.2" data-path="exercise-3.html"><a href="exercise-3.html#question-2-1"><i class="fa fa-check"></i><b>3.2</b> Question 2</a></li>
+<li class="chapter" data-level="3.3" data-path="exercise-3.html"><a href="exercise-3.html#question-3-1"><i class="fa fa-check"></i><b>3.3</b> Question 3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exercise-4.html"><a href="exercise-4.html"><i class="fa fa-check"></i><b>4</b> Exercise 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="exercise-4.html"><a href="exercise-4.html#question-1-2"><i class="fa fa-check"></i><b>4.1</b> Question 1</a></li>
+<li class="chapter" data-level="4.2" data-path="exercise-4.html"><a href="exercise-4.html#question-2-2"><i class="fa fa-check"></i><b>4.2</b> Question 2</a></li>
+<li class="chapter" data-level="4.3" data-path="exercise-4.html"><a href="exercise-4.html#question-3-2"><i class="fa fa-check"></i><b>4.3</b> Question 3</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exercise-5.html"><a href="exercise-5.html"><i class="fa fa-check"></i><b>5</b> Exercise 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="exercise-5.html"><a href="exercise-5.html#question-1-3"><i class="fa fa-check"></i><b>5.1</b> Question 1</a></li>
+<li class="chapter" data-level="5.2" data-path="exercise-5.html"><a href="exercise-5.html#question-2-3"><i class="fa fa-check"></i><b>5.2</b> Question 2</a></li>
+<li class="chapter" data-level="5.3" data-path="exercise-5.html"><a href="exercise-5.html#question-3-3"><i class="fa fa-check"></i><b>5.3</b> Question 3</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="exercise-6.html"><a href="exercise-6.html"><i class="fa fa-check"></i><b>6</b> Exercise 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="exercise-6.html"><a href="exercise-6.html#question-1-4"><i class="fa fa-check"></i><b>6.1</b> Question 1</a></li>
+<li class="chapter" data-level="6.2" data-path="exercise-6.html"><a href="exercise-6.html#question-2-4"><i class="fa fa-check"></i><b>6.2</b> Question 2</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="exercise-8.html"><a href="exercise-8.html"><i class="fa fa-check"></i><b>7</b> Exercise 8</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="exercise-8.html"><a href="exercise-8.html#contingency-table"><i class="fa fa-check"></i><b>7.1</b> Contingency Table</a></li>
+<li class="chapter" data-level="7.2" data-path="exercise-8.html"><a href="exercise-8.html#expected-frequencies"><i class="fa fa-check"></i><b>7.2</b> Expected Frequencies</a></li>
+<li class="chapter" data-level="7.3" data-path="exercise-8.html"><a href="exercise-8.html#pearson-residuals"><i class="fa fa-check"></i><b>7.3</b> Pearson Residuals</a></li>
+<li class="chapter" data-level="7.4" data-path="exercise-8.html"><a href="exercise-8.html#standardized-pearson-residuals"><i class="fa fa-check"></i><b>7.4</b> Standardized Pearson Residuals</a></li>
+<li class="chapter" data-level="7.5" data-path="exercise-8.html"><a href="exercise-8.html#association"><i class="fa fa-check"></i><b>7.5</b> Association</a></li>
+<li class="chapter" data-level="7.6" data-path="exercise-8.html"><a href="exercise-8.html#improvement"><i class="fa fa-check"></i><b>7.6</b> Improvement</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STAT0002 Introduction to Probability and Statistics Weekly Exercises</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercise-8" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Week 7</span> Exercise 8<a href="exercise-8.html#exercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The data in the table below were collected in order to assess whether a new vaccination was
+successful in reducing the number of cases of influenza (flu).</p>
+<p>These data result from a survey of 1000 people in the spring following the winter in question. Each
+person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu vaccine injections.</p>
+<ul>
+<li>Let <span class="math inline">\(V\)</span> be a random variable equal to the number of flu injections that the person had.</li>
+<li>Let <span class="math inline">\(F\)</span> be a random variable indicating whether the person did have flu (<span class="math inline">\(F = 1\)</span>) or not (<span class="math inline">\(F = 0\)</span>).</li>
+</ul>
+<div id="contingency-table" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Contingency Table<a href="exercise-8.html#contingency-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 7.1: </span>Contingency Table with Expected Frequencies</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">V = 0</th>
+<th align="left">V = 1</th>
+<th align="left">V = 2</th>
+<th align="left">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">F = 1</td>
+<td align="left">24 (14.398)</td>
+<td align="left">9 (5.014)</td>
+<td align="left">13 (26.588)</td>
+<td align="left">46</td>
+</tr>
+<tr class="even">
+<td align="left">F = 0</td>
+<td align="left">289 (298.602)</td>
+<td align="left">100 (103.986)</td>
+<td align="left">565 (551.412)</td>
+<td align="left">954</td>
+</tr>
+<tr class="odd">
+<td align="left">Sum</td>
+<td align="left">313</td>
+<td align="left">109</td>
+<td align="left">578</td>
+<td align="left">1000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="expected-frequencies" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Expected Frequencies<a href="exercise-8.html#expected-frequencies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Estimate the expected frequencies under the assumption that <span class="math inline">\(V\)</span> and <span class="math inline">\(F\)</span> are independent.</strong><br />
+If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F = 1 \mid V = 2) = P(F = 0)\)</span>, then we expect that</p>
+<ul>
+<li><span class="math inline">\(P(F = 1) \times 313\)</span> people who didn’t have flu without being vaccinated</li>
+<li><span class="math inline">\(P(F = 1) \times 109\)</span> people who didn’t have flu with <span class="math inline">\(1\)</span> flu vaccine injection</li>
+<li><span class="math inline">\(P(F = 1) \times 578\)</span> people who didn’t have flu with <span class="math inline">\(2\)</span> flu vaccine injection</li>
+</ul>
+<p><span class="math display">\[\hat{P}(F = 1) = \frac{46}{1000} = 0.046\]</span>
+<span class="math display">\[\hat{\mu}_{11} = \hat{P}(F = 1) \times 313 = 0.046 \times 313 = 14.398\]</span>
+<span class="math display">\[\hat{\mu}_{12} = \hat{P}(F = 1) \times 109 = 0.046 \times 109 = 5.014\]</span>
+<span class="math display">\[\hat{\mu}_{13} = \hat{P}(F = 1) \times 578 = 0.046 \times 578 = 26.588\]</span>
+<span class="math display">\[\hat{\mu}_{21} = 313 - 14.398 = 298.602\]</span>
+<span class="math display">\[\hat{\mu}_{22} = 109 - 5.014 = 103.986\]</span>
+<span class="math display">\[\hat{\mu}_{23} = 578 - 26.588 = 551.412\]</span></p>
+</div>
+<div id="pearson-residuals" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Pearson Residuals<a href="exercise-8.html#pearson-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 7.2: </span>Pearson Residuals</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">V = 0</th>
+<th align="right">V = 1</th>
+<th align="right">V = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">F = 1</td>
+<td align="right">2.5305249</td>
+<td align="right">1.7801030</td>
+<td align="right">-2.635195</td>
+</tr>
+<tr class="even">
+<td align="left">F = 0</td>
+<td align="right">-0.5556679</td>
+<td align="right">-0.3908858</td>
+<td align="right">0.578652</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[r_{11}^{P} = \frac{24 - 14.398}{\sqrt{14.398}} = 2.53\]</span>
+<span class="math display">\[r_{12}^{P} = \frac{9 - 5.014}{\sqrt{5.014}} = 1.78\]</span>
+<span class="math display">\[r_{13}^{P} = \frac{13 - 26.588}{\sqrt{26.588}} = -2.64\]</span>
+<span class="math display">\[r_{21}^{P} = \frac{289 - 298.602-}{\sqrt{298.602}} = -0.56\]</span>
+<span class="math display">\[r_{22}^{P} = \frac{100 - 103.986}{\sqrt{103.986}} = -0.39\]</span>
+<span class="math display">\[r_{23}^{P} = \frac{565 - 551.412}{\sqrt{551.412}} = 0.58\]</span></p>
+</div>
+<div id="standardized-pearson-residuals" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Standardized Pearson Residuals<a href="exercise-8.html#standardized-pearson-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 7.3: </span>Standardized Pearson Residuals</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">V = 0</th>
+<th align="right">V = 1</th>
+<th align="right">V = 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">F = 1</td>
+<td align="right">3.125777</td>
+<td align="right">1.930777</td>
+<td align="right">-4.153195</td>
+</tr>
+<tr class="even">
+<td align="left">F = 0</td>
+<td align="right">-3.125777</td>
+<td align="right">-1.930777</td>
+<td align="right">4.153195</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[r_{11}^{S} = \frac{r_{11}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+1})}} = \frac{2.53}{\sqrt{(1-0.046)(1-0.313)}} = 3.13\]</span>
+<span class="math display">\[r_{12}^{S} = \frac{r_{12}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+2})}} = \frac{1.78}{\sqrt{(1-0.046)(1-0.109)}} = 1.93\]</span>
+<span class="math display">\[r_{13}^{S} = \frac{r_{13}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+3})}} = \frac{-2.64}{\sqrt{(1-0.046)(1-0.578)}} = -4.16\]</span>
+<span class="math display">\[r_{21}^{S} = \frac{r_{21}^{P}} {\sqrt{(1-\hat{p}_{2+})(1-\hat{p}_{+1})}} = \frac{-0.56}{\sqrt{(1-0.954)(1-0.313)}} = -3.15\]</span>
+<span class="math display">\[r_{22}^{S} = \frac{r_{22}^{P}} {\sqrt{(1-\hat{p}_{2+})(1-\hat{p}_{+2})}} = \frac{-0.39}{\sqrt{(1-0.954)(1-0.109)}} = -1.93\]</span>
+<span class="math display">\[r_{23}^{S} = \frac{r_{23}^{P}} {\sqrt{(1-\hat{p}_{2+})(1-\hat{p}_{+3})}} = \frac{0.58}{\sqrt{(1-0.954)(1-0.578)}} = 4.16\]</span></p>
+</div>
+<div id="association" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Association<a href="exercise-8.html#association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Does it appear that there is an association between the number of flu injections and catching the flu? Justify your answer.</strong><br />
+</p>
+<p><strong>Method 1</strong>: We can check the association by conducting a Chi-Square Test of Independence.<br />
+Null hypothesis <span class="math inline">\(H_0\)</span>: There is no association between the number of flu injections and catching the flu.<br />
+If the null hypothesis <span class="math inline">\(H_0\)</span> is true, and all the <span class="math inline">\(\hat{\mu}_{ij}\)</span> are large enough (<span class="math inline">\(\hat{\mu}_{ij} \geq 5\)</span> for all i, j), then <span class="math inline">\(X \mathrel{\dot\sim} \chi_{2}^{2}\)</span>.
+<span class="math display">\[\begin{aligned}
+  \chi_{2}^{2} &amp;= \Sigma_{i.j} \frac{(n_{ij} - \hat{\mu}_{ij})^2}{\hat{\mu}_{ij}} \\
+  &amp;= \frac{(24 - 14.4)^2}{14.40} + \frac{(9 - 5.01)^2}{5.01} + \frac{(13-26.59)^2}{26.59} + \frac{(289 - 298.60)^2}{298.60} + \frac{(100 - 103.99)^2}{103.99} + \frac{(565 - 551.41)^2}{551.41} \\
+  &amp;= 17.32
+\end{aligned}\]</span></p>
+<p>We can plot the Chi-Square Density function:<br />
+</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>By inspecting the plot, we find that <span class="math inline">\(P(\chi_{2}^{2} \geq 17.32)\)</span> is extremely small. We can use R to confirm that <span class="math inline">\(P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005\)</span> (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.</p>
+<p>On the other hand, we can conduct the Chi-Square Test using R directly:</p>
+<pre><code>
+    Pearson&#39;s Chi-squared test
+
+data:  data
+X-squared = 17.313, df = 2, p-value = 0.000174</code></pre>
+<p>Since the p-value calculated by R is <span class="math inline">\(0.000174 \ll 0.005\)</span>, which is small enough to reject the null hypothesis, we can prove that there is an association between the number of flu injections and catching flu.<br />
+</p>
+<p><strong>Method 2</strong>: We can test the association by estimating the conditional probabilities.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-6">Table 7.4: </span>Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right"><span class="math inline">\(i = 0\)</span></th>
+<th align="right"><span class="math inline">\(i = 1\)</span></th>
+<th align="right"><span class="math inline">\(i = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\hat{P}(V = i \mid F = 1)\)</span></td>
+<td align="right">0.5217391</td>
+<td align="right">0.1956522</td>
+<td align="right">0.2826087</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\hat{P}(V = i \mid F = 0)\)</span></td>
+<td align="right">0.3029350</td>
+<td align="right">0.1048218</td>
+<td align="right">0.5922432</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\text{Odds Ratio of (V = 0)} = \frac{0.5217}{1 - 0.5217} / \frac{0.3029}{1 - 0.3029} = 2.510\]</span>
+<span class="math display">\[\text{Odds Ratio of (V = 2)} = \frac{0.2826}{1 - 0.2826} / \frac{0.5922}{1 - 0.5922} = 0.2712\]</span>
+We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above, or compare the Odds Ratio at <span class="math inline">\(V = 0\)</span> and <span class="math inline">\(V = 2\)</span> calculated above. We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about <span class="math inline">\(70\%\)</span> of people who didn’t catch flu at least injected one dose of vaccine. Therefore, we can draw the conclusion that there is a negative association between V and F.</p>
+</div>
+<div id="improvement" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Improvement<a href="exercise-8.html#improvement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>uppose that each person in this survey made their own decision whether to have <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, or <span class="math inline">\(2\)</span> vaccine injections. Can you see a potential problem with this? What would be a better way to find out how effective is the vaccine at preventing flu?</strong><br />
+The data collected may be unreliable if anyone among the sampled population reported the wrong data. It would further leads to the inaccuracy of our test result of independence / association of these variables.<br />
+A better way to conduct this research is that we randomly draw samples of the same size from people who haven’t injected the vaccine, people who have had 1 injection of the vaccine, and people who have had 2 injections of the vaccine based on their medical record. Then, conduct a survey among these three sampled groups of people and see if they have had flu or not.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-6.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sunnyhh/stat0002/edit/main/08-Exercise-8.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
