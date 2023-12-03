@@ -14,4 +14,4 @@ github-repo: sunnyhh/stat0002
 link-citations: yes
 ---
 # Preface {.unnumbered}
-This document is used to document my assignments and weekly exercises of STAT0002.ge
+This document is used to document my assignments and weekly exercises of STAT0002.
