@@ -45,6 +45,7 @@ $$\hat{\mu}_{23} = 578 - 26.588 = 551.412$$
 
 ## Pearson Residuals
 ```{r echo = F}
+options(scipen = 1, digits = 2)
 knitr::kable(xsq$residuals, caption = "Pearson Residuals")
 ```
 
@@ -57,6 +58,7 @@ $$r_{23}^{P} = \frac{565 - 551.412}{\sqrt{551.412}} = 0.58$$
 
 ##  Standardized Pearson Residuals
 ```{r echo = F}
+options(scipen = 1, digits = 3)
 stdres <- xsq$residuals
 
 for (i in 1:2) {
@@ -105,15 +107,20 @@ Since the p-value calculated by R is $0.000174 \ll 0.005$, which is small enough
 
 **Method 2**: We can test the association by estimating the conditional probabilities.
 ```{r echo = F}
+options(scipen = 1, digits = 2)
 library(knitr)
 estimated_con_prob <- matrix(c(24/46, 289/954, 9/46, 100/954, 13/46, 565/954), nrow = 2)
 rownames(estimated_con_prob) <- c("$\\hat{P}(V = i \\mid F = 1)$", "$\\hat{P}(V = i \\mid F = 0)$")
 colnames(estimated_con_prob) <- c("$i = 0$", "$i = 1$", "$i = 2$")
 kable(estimated_con_prob, escape = F, caption = "Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not")
+
+estimated_con_prob_2 <- matrix(c(24/313, 289/313, 9/109, 100/109, 13/578, 565/578), nrow = 2)
+rownames(estimated_con_prob_2) <- c("$\\hat{P}(F = 1 \\mid V = i)$", "$\\hat{P}(F = 0 \\mid V = i)$")
+colnames(estimated_con_prob_2) <- c("$i = 0$", "$i = 1$", "$i = 2$")
+kable(estimated_con_prob_2, escape = F, caption = "Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected")
 ```
-$$\text{Odds Ratio of (V = 0)} = \frac{0.5217}{1 - 0.5217} / \frac{0.3029}{1 - 0.3029} = 2.510$$
-$$\text{Odds Ratio of (V = 2)} = \frac{0.2826}{1 - 0.2826} / \frac{0.5922}{1 - 0.5922} = 0.2712$$
-We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above, or compare the Odds Ratio at $V = 0$ and $V = 2$ calculated above. We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about $70\%$ of people who didn't catch flu at least injected one dose of vaccine. Therefore, we can draw the conclusion that there is a negative association between V and F.
+
+We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above (Table 4), or do it the other way around (Table 5). We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about $70\%$ of people who didn't catch flu at least injected one dose of vaccine. On the other hand, we can conclude that the proportion of people who injected one dose of vaccine catching flu is the same as the proportion of people who didn't inject vaccines at all catching flu. But the proportion of people catching flu among those who injected two doses of vaccines has decreased significantly (a quarter comparing to the former ones). Therefore, there is an obvious association between doses of vaccines injected and catching flu or not. Injecting both doses of vaccines may effectively reduce the risk of catching flu, while on the other hand, injecting merely one dose of vaccine may not necessarily be effective.
 
 ## Improvement
 **uppose that each person in this survey made their own decision whether to have $0$, $1$, or $2$ vaccine injections. Can you see a potential problem with this? What would be a better way to find out how effective is the vaccine at preventing flu?** \

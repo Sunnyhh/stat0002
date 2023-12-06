@@ -224,15 +224,15 @@ If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F =
 <tbody>
 <tr class="odd">
 <td align="left">F = 1</td>
-<td align="right">2.5305249</td>
-<td align="right">1.7801030</td>
-<td align="right">-2.635195</td>
+<td align="right">2.53</td>
+<td align="right">1.78</td>
+<td align="right">-2.64</td>
 </tr>
 <tr class="even">
 <td align="left">F = 0</td>
-<td align="right">-0.5556679</td>
-<td align="right">-0.3908858</td>
-<td align="right">0.578652</td>
+<td align="right">-0.56</td>
+<td align="right">-0.39</td>
+<td align="right">0.58</td>
 </tr>
 </tbody>
 </table>
@@ -258,15 +258,15 @@ If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F =
 <tbody>
 <tr class="odd">
 <td align="left">F = 1</td>
-<td align="right">3.125777</td>
-<td align="right">1.930777</td>
-<td align="right">-4.153195</td>
+<td align="right">3.13</td>
+<td align="right">1.93</td>
+<td align="right">-4.15</td>
 </tr>
 <tr class="even">
 <td align="left">F = 0</td>
-<td align="right">-3.125777</td>
-<td align="right">-1.930777</td>
-<td align="right">4.153195</td>
+<td align="right">-3.13</td>
+<td align="right">-1.93</td>
+<td align="right">4.15</td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +298,7 @@ If the null hypothesis <span class="math inline">\(H_0\)</span> is true, and all
     Pearson&#39;s Chi-squared test
 
 data:  data
-X-squared = 17.313, df = 2, p-value = 0.000174</code></pre>
+X-squared = 17, df = 2, p-value = 0.0002</code></pre>
 <p>Since the p-value calculated by R is <span class="math inline">\(0.000174 \ll 0.005\)</span>, which is small enough to reject the null hypothesis, we can prove that there is an association between the number of flu injections and catching flu.<br />
 </p>
 <p><strong>Method 2</strong>: We can test the association by estimating the conditional probabilities.</p>
@@ -315,21 +315,44 @@ X-squared = 17.313, df = 2, p-value = 0.000174</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><span class="math inline">\(\hat{P}(V = i \mid F = 1)\)</span></td>
-<td align="right">0.5217391</td>
-<td align="right">0.1956522</td>
-<td align="right">0.2826087</td>
+<td align="right">0.52</td>
+<td align="right">0.2</td>
+<td align="right">0.28</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(\hat{P}(V = i \mid F = 0)\)</span></td>
-<td align="right">0.3029350</td>
-<td align="right">0.1048218</td>
-<td align="right">0.5922432</td>
+<td align="right">0.30</td>
+<td align="right">0.1</td>
+<td align="right">0.59</td>
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[\text{Odds Ratio of (V = 0)} = \frac{0.5217}{1 - 0.5217} / \frac{0.3029}{1 - 0.3029} = 2.510\]</span>
-<span class="math display">\[\text{Odds Ratio of (V = 2)} = \frac{0.2826}{1 - 0.2826} / \frac{0.5922}{1 - 0.5922} = 0.2712\]</span>
-We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above, or compare the Odds Ratio at <span class="math inline">\(V = 0\)</span> and <span class="math inline">\(V = 2\)</span> calculated above. We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about <span class="math inline">\(70\%\)</span> of people who didn’t catch flu at least injected one dose of vaccine. Therefore, we can draw the conclusion that there is a negative association between V and F.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-6">Table 7.4: </span>Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right"><span class="math inline">\(i = 0\)</span></th>
+<th align="right"><span class="math inline">\(i = 1\)</span></th>
+<th align="right"><span class="math inline">\(i = 2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\hat{P}(F = 1 \mid V = i)\)</span></td>
+<td align="right">0.08</td>
+<td align="right">0.08</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\hat{P}(F = 0 \mid V = i)\)</span></td>
+<td align="right">0.92</td>
+<td align="right">0.92</td>
+<td align="right">0.98</td>
+</tr>
+</tbody>
+</table>
+<p>We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above (Table 4), or do it the other way around (Table 5). We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about <span class="math inline">\(70\%\)</span> of people who didn’t catch flu at least injected one dose of vaccine. On the other hand, we can conclude that the proportion of people who injected one dose of vaccine catching flu is the same as the proportion of people who didn’t inject vaccines at all catching flu. But the proportion of people catching flu among those who injected two doses of vaccines has decreased significantly (a quarter comparing to the former ones). Therefore, there is an obvious association between doses of vaccines injected and catching flu or not. Injecting both doses of vaccines may effectively reduce the risk of catching flu, while on the other hand, injecting merely one dose of vaccine may not necessarily be effective.</p>
 </div>
 <div id="improvement" class="section level2 hasAnchor" number="7.6">
 <h2><span class="header-section-number">7.6</span> Improvement<a href="exercise-8.html#improvement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
