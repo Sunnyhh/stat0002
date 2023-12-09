@@ -1,0 +1,27 @@
+# Fun Fact
+
+**A fun fact introduced by Dr. Soo during the departmental social event:** 
+
+Given that $U_1, U_2, U_3...$ are independent and identically distributed where $U_i \sim \text{unif}[0,1]$. \
+Let $T = \textbf{min}\{n \leq 1: U_1 + U_2 + ... + U_n > 1\}$, where $n = 2, 3, 4..., etc$. \
+The expected value of $T$ approximately equals to $e$, i.e., $\mathbb{E}(T) \approx e$.
+
+We can prove this statement by running an R simulation:
+
+```{r}
+T <- function() {
+  n = 0
+  t = 0
+  while (t < 1) {
+    t <- t + runif(1)
+    n <- n + 1
+  }
+  n
+}
+Expected_Value = mean(replicate(100000, T()))
+```
+
+```{r echo = F}
+cat("E(T) =", Expected_Value)
+```
+

@@ -45,3 +45,5 @@ pearson-residuals
 standardized-pearson-residuals
 association
 improvement
+fun-fact-discussed-in-department-social-event
+fun-fact
