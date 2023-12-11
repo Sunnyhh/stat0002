@@ -51,6 +51,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -222,37 +226,78 @@ person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu v
 <div id="contingency-table" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Contingency Table<a href="exercise-8.html#contingency-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 8.1: </span>Contingency Table with Expected Frequencies</caption>
+<caption>
+<span id="tab:unnamed-chunk-10">Table 8.1: </span>Contingency Table with Expected Frequencies
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">V = 0</th>
-<th align="left">V = 1</th>
-<th align="left">V = 2</th>
-<th align="left">Sum</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+V = 0
+</th>
+<th style="text-align:left;">
+V = 1
+</th>
+<th style="text-align:left;">
+V = 2
+</th>
+<th style="text-align:left;">
+Sum
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">F = 1</td>
-<td align="left">24 (14.398)</td>
-<td align="left">9 (5.014)</td>
-<td align="left">13 (26.588)</td>
-<td align="left">46</td>
+<tr>
+<td style="text-align:left;">
+F = 1
+</td>
+<td style="text-align:left;">
+24 (14.398)
+</td>
+<td style="text-align:left;">
+9 (5.014)
+</td>
+<td style="text-align:left;">
+13 (26.588)
+</td>
+<td style="text-align:left;">
+46
+</td>
 </tr>
-<tr class="even">
-<td align="left">F = 0</td>
-<td align="left">289 (298.602)</td>
-<td align="left">100 (103.986)</td>
-<td align="left">565 (551.412)</td>
-<td align="left">954</td>
+<tr>
+<td style="text-align:left;">
+F = 0
+</td>
+<td style="text-align:left;">
+289 (298.602)
+</td>
+<td style="text-align:left;">
+100 (103.986)
+</td>
+<td style="text-align:left;">
+565 (551.412)
+</td>
+<td style="text-align:left;">
+954
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Sum</td>
-<td align="left">313</td>
-<td align="left">109</td>
-<td align="left">578</td>
-<td align="left">1000</td>
+<tr>
+<td style="text-align:left;">
+Sum
+</td>
+<td style="text-align:left;">
+313
+</td>
+<td style="text-align:left;">
+109
+</td>
+<td style="text-align:left;">
+578
+</td>
+<td style="text-align:left;">
+1000
+</td>
 </tr>
 </tbody>
 </table>
@@ -277,27 +322,52 @@ If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F =
 <div id="pearson-residuals" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Pearson Residuals<a href="exercise-8.html#pearson-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
-<caption><span id="tab:unnamed-chunk-4">Table 8.2: </span>Pearson Residuals</caption>
+<caption>
+<span id="tab:unnamed-chunk-11">Table 8.2: </span>Pearson Residuals
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">V = 0</th>
-<th align="right">V = 1</th>
-<th align="right">V = 2</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+V = 0
+</th>
+<th style="text-align:right;">
+V = 1
+</th>
+<th style="text-align:right;">
+V = 2
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">F = 1</td>
-<td align="right">2.53</td>
-<td align="right">1.78</td>
-<td align="right">-2.64</td>
+<tr>
+<td style="text-align:left;">
+F = 1
+</td>
+<td style="text-align:right;">
+2.53
+</td>
+<td style="text-align:right;">
+1.78
+</td>
+<td style="text-align:right;">
+-2.64
+</td>
 </tr>
-<tr class="even">
-<td align="left">F = 0</td>
-<td align="right">-0.56</td>
-<td align="right">-0.39</td>
-<td align="right">0.58</td>
+<tr>
+<td style="text-align:left;">
+F = 0
+</td>
+<td style="text-align:right;">
+-0.56
+</td>
+<td style="text-align:right;">
+-0.39
+</td>
+<td style="text-align:right;">
+0.58
+</td>
 </tr>
 </tbody>
 </table>
@@ -311,27 +381,52 @@ If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F =
 <div id="standardized-pearson-residuals" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Standardized Pearson Residuals<a href="exercise-8.html#standardized-pearson-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
-<caption><span id="tab:unnamed-chunk-5">Table 8.3: </span>Standardized Pearson Residuals</caption>
+<caption>
+<span id="tab:unnamed-chunk-12">Table 8.3: </span>Standardized Pearson Residuals
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">V = 0</th>
-<th align="right">V = 1</th>
-<th align="right">V = 2</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+V = 0
+</th>
+<th style="text-align:right;">
+V = 1
+</th>
+<th style="text-align:right;">
+V = 2
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">F = 1</td>
-<td align="right">3.13</td>
-<td align="right">1.93</td>
-<td align="right">-4.15</td>
+<tr>
+<td style="text-align:left;">
+F = 1
+</td>
+<td style="text-align:right;">
+3.13
+</td>
+<td style="text-align:right;">
+1.93
+</td>
+<td style="text-align:right;">
+-4.15
+</td>
 </tr>
-<tr class="even">
-<td align="left">F = 0</td>
-<td align="right">-3.13</td>
-<td align="right">-1.93</td>
-<td align="right">4.15</td>
+<tr>
+<td style="text-align:left;">
+F = 0
+</td>
+<td style="text-align:right;">
+-3.13
+</td>
+<td style="text-align:right;">
+-1.93
+</td>
+<td style="text-align:right;">
+4.15
+</td>
 </tr>
 </tbody>
 </table>
@@ -356,7 +451,7 @@ If the null hypothesis <span class="math inline">\(H_0\)</span> is true, and all
 \end{aligned}\]</span></p>
 <p>We can plot the Chi-Square Density function:<br />
 </p>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>By inspecting the plot, we find that <span class="math inline">\(P(\chi_{2}^{2} \geq 17.32)\)</span> is extremely small. We can use R to confirm that <span class="math inline">\(P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005\)</span> (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.</p>
 <p>On the other hand, we can conduct the Chi-Square Test using R directly:</p>
 <pre><code>
@@ -366,54 +461,104 @@ data:  data
 X-squared = 17, df = 2, p-value = 0.0002</code></pre>
 <p>Since the p-value calculated by R is <span class="math inline">\(0.000174 \ll 0.005\)</span>, which is small enough to reject the null hypothesis, we can prove that there is an association between the number of flu injections and catching flu.<br />
 </p>
-<p><strong>Method 2</strong>: We can test the association by estimating the conditional probabilities.</p>
+<strong>Method 2</strong>: We can test the association by estimating the conditional probabilities.
 <table>
-<caption><span id="tab:unnamed-chunk-8">Table 8.4: </span>Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not</caption>
+<caption>
+<span id="tab:unnamed-chunk-15">Table 8.4: </span>Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right"><span class="math inline">\(i = 0\)</span></th>
-<th align="right"><span class="math inline">\(i = 1\)</span></th>
-<th align="right"><span class="math inline">\(i = 2\)</span></th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(i = 0\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(i = 1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(i = 2\)</span>
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\hat{P}(V = i \mid F = 1)\)</span></td>
-<td align="right">0.52</td>
-<td align="right">0.2</td>
-<td align="right">0.28</td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\hat{P}(V = i \mid F = 1)\)</span>
+</td>
+<td style="text-align:right;">
+0.52
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:right;">
+0.28
+</td>
 </tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\hat{P}(V = i \mid F = 0)\)</span></td>
-<td align="right">0.30</td>
-<td align="right">0.1</td>
-<td align="right">0.59</td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\hat{P}(V = i \mid F = 0)\)</span>
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+0.59
+</td>
 </tr>
 </tbody>
 </table>
 <table>
-<caption><span id="tab:unnamed-chunk-8">Table 8.4: </span>Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected</caption>
+<caption>
+<span id="tab:unnamed-chunk-15">Table 8.4: </span>Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right"><span class="math inline">\(i = 0\)</span></th>
-<th align="right"><span class="math inline">\(i = 1\)</span></th>
-<th align="right"><span class="math inline">\(i = 2\)</span></th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(i = 0\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(i = 1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(i = 2\)</span>
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\hat{P}(F = 1 \mid V = i)\)</span></td>
-<td align="right">0.08</td>
-<td align="right">0.08</td>
-<td align="right">0.02</td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\hat{P}(F = 1 \mid V = i)\)</span>
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.02
+</td>
 </tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\hat{P}(F = 0 \mid V = i)\)</span></td>
-<td align="right">0.92</td>
-<td align="right">0.92</td>
-<td align="right">0.98</td>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(\hat{P}(F = 0 \mid V = i)\)</span>
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+<td style="text-align:right;">
+0.92
+</td>
+<td style="text-align:right;">
+0.98
+</td>
 </tr>
 </tbody>
 </table>

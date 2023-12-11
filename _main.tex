@@ -1,0 +1,837 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\AtBeginDocument{\renewcommand{\chaptername}{Week}}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={STAT0002 Introduction to Probability and Statistics Weekly Exercises},
+  pdfauthor={Ge Li (Sunny)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{STAT0002 Introduction to Probability and Statistics Weekly Exercises}
+\author{Ge Li (Sunny)}
+\date{November 3 2023}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+This document is used to document my assignments and weekly exercises of STAT0002.
+
+\chapter{Exercise 1}\label{exercise-1}
+
+\section{Question 1}\label{question-1}
+
+\textbf{Import a set of data ``days'' from STAT0002 library. Calculate the five-number summary of these data.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(stat0002)}
+\CommentTok{\# To give us a better understanding of the data imported:}
+\FunctionTok{sort}\NormalTok{(days)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]   31  199  491  881  895  967  989 1036 1260 1418 1427 1460 1460 1460 1460
+## [16] 1460 1460 1460 1460 1460 1460 1460 1460 1461 1461 1461 1503 1655 1886 2027
+## [31] 2039 2727 2810 2864 2921 2921 2921 2921 2921 2921 2922 2922 2922 2922 2922
+## [46] 4422
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{fivenum}\NormalTok{(days)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]   31.0 1460.0 1460.5 2921.0 4422.0
+\end{verbatim}
+
+Therefore, the five-number summary of the dataset is (31, 1460, 1460.5, 2921, 4422) days.
+
+\section{Question 2}\label{question-2}
+
+\textbf{Create a boxplot of these data.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(days, }\AttributeTok{horizontal =}\NormalTok{ T, }\AttributeTok{xlab =} \StringTok{"Mystery Variable (Days)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+Combining the shape of this boxplot and the data summary we acquired above, the shape of the distribution of this dataset is slightly positively skewed. There are no outliers. All the data values are concluded in the boxplot. The boxplot visualizes the five-number summary as well as the location, shape, and spread of the distribution.
+
+\section{Question 3}\label{question-3}
+
+\textbf{Create histograms of these data with with different breaks.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(days, }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{2500}\NormalTok{, }\DecValTok{3500}\NormalTok{, }\DecValTok{4500}\NormalTok{), }\AttributeTok{freq =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(days, }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{2500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{3500}\NormalTok{, }\DecValTok{4000}\NormalTok{, }\DecValTok{4500}\NormalTok{), }\AttributeTok{freq =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-3-2} \end{center}
+
+While the first histogram shows us a rough shape and distribution, the second histogram is more detailed with more breaks. We can easily identify the modes of distribution using histograms and acquire a basic shape of the distribution as well.
+
+\section{Question 4}\label{question-4}
+
+\textbf{Create a stem-and-leaf plot of the data.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stem}\NormalTok{(days)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   The decimal point is 3 digit(s) to the right of the |
+## 
+##   0 | 02
+##   0 | 599
+##   1 | 000344
+##   1 | 555555555555555579
+##   2 | 00
+##   2 | 78999999999999
+##   3 | 
+##   3 | 
+##   4 | 4
+\end{verbatim}
+
+We could conclude from this plot that the shape of this dataset follows a bimodal distribution, where a lot of values in the data fall around 1500 and 2900.
+
+\section{Question 5}\label{question-5}
+
+\textbf{Create a dot plot of the data.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stripchart}\NormalTok{(days, }\AttributeTok{method =} \StringTok{"stack"}\NormalTok{, }\AttributeTok{at =} \DecValTok{0}\NormalTok{, }\AttributeTok{offset =} \DecValTok{1}\NormalTok{, }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Mysterious Variable (Days)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-5-1} \end{center}
+
+The dot plot confirms our conclusion from the stem-and-leaf plot stated above.
+
+\section{Question 6}\label{question-6}
+
+\textbf{Find if there are any outliers in this dataset.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{IQR }\OtherTok{\textless{}{-}} \FunctionTok{IQR}\NormalTok{(days)}
+\NormalTok{UpperBound }\OtherTok{\textless{}{-}} \DecValTok{2921} \SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ IQR}
+\NormalTok{LowerBound }\OtherTok{\textless{}{-}} \DecValTok{1460} \SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ IQR}
+\NormalTok{UpperBound}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5091.125
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{LowerBound}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -710.125
+\end{verbatim}
+
+All the values from the data fall in the range \(\in [-710.125, 5091.125]\). Therefore, there aren't any outliers. Since 2922 days are approximately equivalent to 8 years, these data might represent the time it takes for people to get a Ph.D., the 8-year cycle of Venus, or the length of the presidency of the United States.
+
+\chapter{Exercise 2}\label{exercise-2}
+
+\section{Question 1 - Location}\label{question-1---location}
+
+\textbf{(a) Sample Mean}
+\[\begin{aligned}
+\bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \\
+\bar{y} & =\frac{1}{n} \sum_{i=1}^{n} y_i \\
+         &=\frac{1}{n} \sum_{i=1}^{n} (ax_i + b) \\
+         &=\frac{1}{n}(a\frac{1}{n} \sum_{i=1}^{n} x_i + bn) \\
+         &=\frac{a}{n} \sum_{i=1}^{n} x_i + b \\
+\therefore \bar{y} &= a\bar{x} + b
+\end{aligned}\]
+
+\textbf{(b) Sample Median: } The order of the values in the dataset sorted will remain the same after the transformation. As a result, \(y_{1/2} = ax_{1/2} + b\).\\
+\textbf{(c) Summary: } The above results about sample mean and sample median are reasonable based on mathematical proof.
+
+\section{Question 2 - Spread}\label{question-2---spread}
+
+\textbf{(a) Standard Deviation}
+\[\begin{aligned}
+S_x &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \\
+S_y &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2} \\
+S_y &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (ax_i + b - (a\bar{x} + b))^2} \\
+    &= \sqrt{\frac{a^2}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \\
+    &= a \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \\
+\therefore S_y &= a S_x 
+\end{aligned}\]
+
+\textbf{(b) Sample Interquartile Range}
+\[\begin{aligned} 
+q_U^x - q_L^x &= x_{\frac{3}{4}(n+1)} - x_{\frac{1}{4}(n+1)} \\
+q_U^y - q_L^y &= y_{\frac{3}{4}(n+1)} - y_{\frac{1}{4}(n+1)} \\
+q_U^y - q_L^y &= ax_{\frac{3}{4}(n+1)} + b - (ax_{\frac{1}{4}(n+1)} + b) \\
+q_U^y - q_L^y &= a(x_{\frac{3}{4}(n+1)} - x_{\frac{1}{4}(n+1)}) \\
+\therefore q_U^y - q_L^y &= a(q_U^x - q_L^x)
+\end{aligned}\]
+
+\textbf{(c) Summary: } The above results about sample interquartile range and standard deviation make sense based on mathematical proof.
+
+\section{Question 3 - Shape}\label{question-3---shape}
+
+\textbf{(a) Standardized Sample Skewnewss}
+\[\require{cancel}
+\begin{aligned} 
+Skewness_x &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{S_x^3} \\
+Skewness_y &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (y_i - \bar{y})^3}{S_y^3} \\
+Skewness_y &= \frac{1}{n} \cdot \frac{\cancel{a^3} \cdot \sum_{i=1}^{n} (x_i - \bar{x})^3}{\cancel{a^3} \cdot S_x^3} \\
+\therefore Skewness_y &= Skewness_x
+\end{aligned}\]
+\textbf{(b) Sample Quartile Skewness}
+\[\require{cancel}
+\begin{aligned}
+Skewness_x &= \frac{(q_U^x - m_x) - (m_x - q_L^x)}{q_U^x - q_L^x} \\
+Skewness_y &= \frac{(q_U^y - m_y) - (m_y - q_L^y)}{q_U^y - q_L^y} \\
+Skewness_y &= \frac{\cancel{a}((q_U^x - m_x) - (m_x - q_L^x))}{\cancel{a}(q_U^x - q_L^x)} \\
+\therefore Skewness_y &= Skewness_x
+\end{aligned}\]
+\textbf{(c) Summary: } The above results about standardized sample skewness and sample quartile skewness are correct based on mathematical proof.
+
+\section{Question 4 - About Sample Size}\label{question-4---about-sample-size}
+
+\textbf{Explain the reason why these summary statstics require \(n \geq 3\).}\\
+The precondition is \(n \geq 3\) because when the sample size is too small, it's meaningless to investigate summary statistics. There's nothing to investigate about a set of variables with only one or two data. A smaller sample size also leads to increasing percentage uncertainty while calculating the data. Finally, \(n \neq 1\) also because that the process of calculating standard deviation requires we use \((n-1)\) as a denominator, and 0 can't be a denominator.
+
+\chapter{Exercise 3}\label{exercise-3}
+
+Two fair dice, one red and one blue, are thrown. For each die: the possible scores are 1,2,3,4,5,6. Each
+score is equally likely, so each score has probability \(\frac{1}{6}\). You may assume that the score on red die is
+independent of the score on the blue die.
+
+We define the following events:\\
+\(A\): sum of the scores on the dice is 7.\\
+\(B\): the score on the red die is different from the score on the blue die.\\
+\(C\): the sum of the scores on the dice is 11.\\
+\(D\): the score on the red die is 6.\\
+
+\section{Question 1}\label{question-1-1}
+
+\textbf{(a) Calculate \(P(A), P(B), P(C)\), and \(P(D)\).}
+\[P(A) = (\frac{1}{6} \cdot \frac{1}{6}) \cdot 6 = \frac{1}{6} \\
+P(B) = \frac{5}{6} \\
+P(C) = (\frac{1}{6} \cdot \frac{1}{6}) \cdot 2 = \frac{1}{18} \\
+P(D) = \frac{1}{6}\]
+
+\textbf{(b) Calculate \(P(A,B), P(A,C)\), and \(P(A,D)\).}
+\[P(A,B) = P(A) = \frac{1}{6} \\
+P(A,C) = 0 \\
+P(A,D) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}\]
+
+\textbf{(c) Calculate \(P(A or B), P(A or C)\), and \(P(A or D)\).}
+\[P(A \ or \ B) = P(B) = \frac{5}{6} \\
+P(A \ or \  C) = P(A) + P(C) = \frac{1}{6} + \frac{1}{18} = \frac{2}{9} \\
+P(A \ or \ D) = \frac{1}{6} + \frac{1}{6} \cdot \frac{5}{6} = \frac{11}{36}\]
+
+\textbf{(d) Calculate \(P(B \mid A), P(C \mid A)\), and \(P(D \mid A)\).}
+\[P(B \mid A) = \frac{P(A,B)}{P(A)} = 1 \\
+P(C \mid A) = \frac{P(A,C)}{P(A)} = 0 \\
+P(D \mid A) = \frac{P(A,D)}{P(A)} = \frac{\frac{1}{36}}{\frac{1}{6}} = \frac{1}{6}\]
+
+\section{Question 2}\label{question-2-1}
+
+\textbf{Which of the following pairs of events are independent and why?}\\
+\textbf{(a) A and B.}\\
+\(P(A,B) = \frac{1}{6} \neq P(A) \cdot P(B)\), \(\therefore A\) is not independent of \(B\).\\
+Events \(A\) and \(B\) are not independent if \(A\) happens (the sum of the scores on 2 dice equal 7), \(B\) must happen since the score on the red die must be different from the score on the blue one.\\
+
+\textbf{(b) A and C.}\\
+\(P(A,C) = 0\), \(\therefore A\) is not independent of \(C\).\\
+Events A and C are not independent, they are mutually exclusive since these 2 events cannot happen at the same time.\\
+
+\textbf{(c) A and D.}\\
+\(P(A,D) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}\), \(\therefore A \perp B\).\\
+Events A and D are independent.
+
+\section{Question 3}\label{question-3-1}
+
+\textbf{Now let \(E\) be the event that at least one 6 is thrown and \(F\) the event that two 6s are thrown. Calculate:}\\
+\textbf{(a) \(P(F \mid D)\).}\\
+\[P(F \mid D) = \frac{P(F,D)}{P(D)} = \frac{\frac{1}{6} \cdot \frac{1}{6}}{\frac{1}{6}} = \frac{1}{6}\]\\
+\textbf{(b) \(P(F \mid E)\).}\\
+\[P(F \mid E) = \frac{P(F,E)}{P(E)} = \frac{\frac{1}{6} \cdot \frac{1}{6}}{\frac{1}{6} \cdot \frac{1}{6} + \frac{1}{6} \cdot \frac{5}{6} \cdot 2} = \frac{1}{11}\]
+
+\chapter{Exercise 4}\label{exercise-4}
+
+\section{Question 1}\label{question-1-2}
+
+\textbf{\(B_1\) and \(B_2\) are mutually exclusive, exhaustive events such that \(P(B_1) = 0.05\). \(A\) is an event such that \(P(A \mid B_1) = 0.75\) and \(P(A \mid B_2) = 0.50\).}\\
+\textbf{(a) Use the law of total probability to calculate \(P(A)\).}\\
+\[P(A) = P(A \mid B_1)P(B_1) + P(A \mid B_2)P(B_2) = 0.75 * 0.05. + 0.50 * (1 - 0.05) = 0.5125\]
+\textbf{(b) Use Bayes' Theorem to calculate \(P(B_1 \mid A)\).}\\
+\[P(B_1 \mid A) = \frac{P(A \mid B_1) \cdot P(B_1)}{P(A)} = \frac{0.75 \cdot 0.05}{0.5125} = 0.07317\]
+
+\section{Question 2}\label{question-2-2}
+
+In a population, 5\% of people have high blood pressure. Of people with high blood pressure, 75\% drink alcohol whereas only 50\% of people without high blood pressure drink alcohol. What percentage of drinkers of alcohol have high blood pressure?\\
+
+Let event \(B_1\) represent people having high blood pressure in the population, whereas event \(B_2\) represents people without high blood pressure in this population.
+\[\therefore P(B_1) = 0.05, \ P(B_2) = 0.95.\]
+Let event \(A\) represent people who drink alcohol. Of people with high blood pressure, 75\% drink alcohol while only 50\% of people without high blood pressure drink alcohol.
+\[\therefore P(A \mid B_1) = 0.75, \ P(A \mid B_2) = 0.50.\]
+Therefore, the percentage of alcohol drinkers having high blood pressure can be interpreted as \(PA(B_1 \mid A)\).
+\[P(B_1 \mid A) = \frac{P(A \mid B_1) \cdot P(B_1))}{P(A)} = \frac{0.75 \cdot 0.05}{0.5125} = 0.07317\]
+
+\section{Question 3}\label{question-3-2}
+
+Suppose that \(A\) and \(B\) are two events with \(P(A) > 0\) and \(P(B) > 0\). Suppose, in addition, that \(P(A \mid B) < P(A)\). Using Bayes' Theorem, or otherwise, show that \(P(B \mid A) < P(B\). Interpret this result using words.
+\(\require{cancel}\)
+\[P(A \mid B) < P(A)\]
+\[\frac{P(B \mid A) \cdot P(A)}{P(B)} < P(B)\]
+\[\because P(A) > 0, P(B) > 0\]
+\[\therefore \frac{P(B \mid A) \cdot \cancel{P(B)} \cdot \cancel{P(A)}}{\cancel{P(B)} \cdot \cancel{P(A)}} < \frac{\cancel{P(A)} \cdot P(B)}{\cancel{P(A)}}\]
+\[\therefore P(B \mid A) < P(B)\]
+Interpretation: the conditional probability will always be less than or at least equal to the total proabability of an event.
+
+\chapter{Exercise 5}\label{exercise-5}
+
+\section{Question 1}\label{question-1-3}
+
+Let X be a random variable with mean \(\mu\) and (positive) variance \(\sigma^2\). Find the mean and variance of the random variable \(Y = \frac{X - \mu}{\sigma}\).\\
+\textbf{Mean:}
+\[\because Y = \frac{X - \mu}{\sigma}\]
+\[\therefore X = \sigma \cdot Y + \mu\]
+\[\therefore \mathbb{E}(X) = \sigma \cdot \mathbb{E}(Y) + \mu\]
+\[\therefore \mathbb{E}(Y) = \frac{\mathbb{E}(X) - \mu}{\sigma}\]
+\[\because \mathbb{E}(X) = \mu\]
+\[\therefore \mathbb{E}(Y) = 0\]
+\textbf{Variance:}
+\[\because X = \sigma \cdot Y + \mu\]
+\[\therefore \mathbb{Var}(X) = \sigma^2 \cdot \mathbb{Var}(Y)\]
+\[\because \mathbb{Var}(X) = \sigma^2\]
+\[\therefore \mathbb{Var}(Y) = 1\]
+Therefore, the mean and variance of the random variable Y is 0 and 1.
+
+\section{Question 2}\label{question-2-3}
+
+Let X be the number of heads in 2 independent tosses of a fair coin.\\
+\textbf{(a)} Find \(\mathbb{E}(\frac{1}{1+X})\).\\
+Let random variable \(Y = \frac{1}{1+X}\),\\
+Possible outcomes:\\
+
+\(x\)
+
+0
+
+1
+
+2
+
+\(y\)
+
+1
+
+\(\frac{1}{2}\)
+
+\(\frac{1}{3}\)
+
+\(y^2\)
+
+1
+
+\(\frac{1}{4}\)
+
+\(\frac{1}{9}\)
+
+\(P(X=x)\)
+
+\(\frac{1}{4}\)
+
+\(\frac{1}{2}\)
+
+\(\frac{1}{4}\)
+
+\(P(Y=y)\)
+
+\(\frac{1}{4}\)
+
+\(\frac{1}{2}\)
+
+\(\frac{1}{4}\)
+
+\[\therefore \mathbb{E}(\frac{1}{1+X}) = \sum (\frac{1}{1+x_i})P(X = x_i) = \mathbb{E}(Y) = 1 \cdot \frac{1}{4} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{4} = \frac{7}{12}\]
+
+\textbf{(b)} Show that \(\mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}\).\\
+\[\mathbb{E}(X) = 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{4} = 1\]
+\[\therefore \frac{1}{1+\mathbb{E}(X)} = \frac{1}{2}\]
+\[\because \mathbb{E}(\frac{1}{1+X}) = \frac{7}{12}\]
+\[\because \frac{7}{12} \neq \frac{1}{2}\]
+\[\therefore \mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}\]
+
+\textbf{(c)} Find \(\mathbb{Var}(\frac{1}{1+X})\).\\
+\[\mathbb{E}((\frac{1}{1+X})^2) = 1 \cdot \frac{1}{4} + \frac{1}{4} \cdot \frac{1}{2} + \frac{1}{9} \cdot \frac{1}{4} = \frac{29}{72}\]
+\[\because \mathbb{Var}(\frac{1}{1+X}) = \mathbb{E}((\frac{1}{1+X})^2) - (\mathbb{E}(\frac{1}{1+X}))^2 = \frac{29}{72} - (\frac{7}{12})^2 = \frac{1}{16}\]
+
+\section{Question 3}\label{question-3-3}
+
+Let \(X_H\) be be the number of heads and \(X_T\) be the number of tails obtained in 4 independent tosses of a fair coin. You are given that \(\mathbb{E}(X_H) = 2\) and \(\mathbb{Var}(X_H) = 1\).\\
+\textbf{(a)} Find \(\mathbb{E}(X_T)\).\\
+\[X_H + X_T = 4\]
+\[X_T = 4 - E_H\]
+\[\begin{aligned}
+\mathbb{E}(X_T) &= \mathbb{E}(4 - X_H) \\
+                  &= 4 - \mathbb{E}(X_H) \\
+                  &= 4 - 2 \\
+\end{aligned}\]
+\[\therefore \mathbb{E}(X_T) = 2\]
+
+\textbf{(b)} Show that \(X_H - X_T = 2 \cdot X_H -4\).\\
+\[\because X_H + X_T = 4\]
+\[\therefore X_T = 4 - X_H\]
+\[\therefore X_H - X_T = X_H - (4 - X_H)\]
+\[\therefore X_H - X_T = 2 \cdot X_H - 4\]
+
+\textbf{(c)} Hence, or otherwise, find \(\mathbb{E}(X_H - X_T)\) and \(\mathbb{Var}(X_H - X_T)\).\\
+\[\mathbb{E}(X_H - X_T) = \mathbb{E}(2 \cdot X_H - 4) = 2 \cdot \mathbb{E}(X_H) -4 = 0\]
+\[\mathbb{Var}(X_H - X_T) = \mathbb{Var}(2 \cdot X_H - 4) = 2^2 \cdot \mathbb{Var}(X_H) = 4\]
+
+\chapter{Exercise 6}\label{exercise-6}
+
+\section{Question 1}\label{question-1-4}
+
+A machine makes components whose lengths must be between the specification limits of 6.45cm and 6.55cm. Let L denote the length of a randomly chosen componet made by the machine. Suppose that L has a normal distribution with mean \(\mu\) and variance \(\sigma^2\).
+
+Based on measurements of a very large number of components it is found that \(5\%\) of components are longer than 6.55cm and \(5\%\) of components are shorter than 6.45cm.
+
+\textbf{(a)} Find \(\mu\) and \(\sigma^2\)
+\[P(X > 6.55) = 1 - \Phi(\frac{6.55 - \mu}{\sigma}) = 0.05\]
+\[P(X < 6.45) = \Phi(\frac{6.45 - \mu}{\sigma}) = 0.05\]
+By inspecting the Normal Distribution Function table,
+\[z = \frac{6.55 - \mu}{\sigma} = 1.6449\]
+\[\therefore \mu = 6.55 - 1.6449 \sigma\]
+Substitute this relationship into the second equation,
+\[\frac{6.45 - (6.55 - 1.6449 \sigma)}{\sigma} = -1.6449\]
+\[2 * 1.6449 \sigma = 0.1\]
+\[\sigma = 0.0304\]
+\[\therefore \mu = 6.5, \sigma^2 = 0.001\]
+
+\textbf{(b)} Consider the next 100 components made by the machine. What is the distribution of the number of these components that have a length between the specification limits? State any extra assumptions that you make.
+
+Let X denote the length of the component made by the machine, \(X \sim B(100, 0.9)\). The number of these components that have a length between the specification limits is follows a binomial distribution considering it satisfies the following requirements:
+
+\begin{itemize}
+\tightlist
+\item
+  The total number of observations is fixed at 100 components.
+\item
+  Each observation is independent and has 2 outcomes - \(X\) falls in the specification limits or not.
+\item
+  The probability of the length of each component falling in the specification range is fixed at \(0.9\).
+\end{itemize}
+
+\section{Question 2}\label{question-2-4}
+
+Suppose that \(U\) is uniformly distributed over \((0,1)\), i.e.~\(U \sim U(0,1)\). Let \(X = -\frac{1}{\lambda}\ln{U}\), where \(\lambda > 0\).
+
+\textbf{(a)} Find the c.d.f \(F_x(x) = P(X \leq x)\) of X.
+The c.d.f of a \(U(0,1)\) distribution,
+\[
+\begin{equation}
+  F_U(u) = P(U \leq u) = 
+  \begin{cases}
+    0   &   u \leq 0 \\
+    u   &   0 < u \leq 1 \\
+    1   &   u \geq 1
+  \end{cases}
+\end{equation}
+\]
+As a result, for \(x \geq 0\),
+\[\begin{align}
+  F_x(x) &= P(X \leq x) \\ 
+  &= P(-\frac{1}{\lambda}\ln{U} \leq x) \\
+         &= P(U \geq e^{-\lambda x}) \\
+         &= 1 - e^{-\lambda x}
+\end{align}\]
+Therefore,
+\[
+\begin{equation}
+  F_X(x) = 
+  \begin{cases}
+    0   &   x < 0 \\
+    1 - e^{-\lambda x}    &   x \geq 0
+  \end{cases}
+\end{equation}
+\]
+
+\textbf{(b)} Find the p.d.f \(f_x(x)\) of X.
+\[f_x(x) = \frac{d}{dx} [F_x(x)] = \frac{d}{dx} (1 - e^{-\lambda x}) = \lambda e^{-\lambda x}, \ \text{where } x \geq 0\]
+Therefore,
+\[
+\begin{equation}
+  f_X(x) = 
+  \begin{cases}
+    0   &   x < 0 \\
+    \lambda e^{-\lambda x}   &   x \geq 0
+  \end{cases}
+\end{equation}
+\]
+
+\textbf{(c)} Name the distribution of X.
+
+\(X \sim Exp(\lambda)\)
+The random variable X follows an Exponential Distribution.
+
+\textbf{(d)} Find the mean, median, and mode of X.
+\[\text{Mean} = \mathbb{E}[X] = \int_{-\infty}^{\infty} xf_X(x) \,dx = \int_{-\infty}^{\infty} x \lambda e^{-\lambda x} \,dx = \frac{1}{\lambda}\]
+\[F_X(\text{median}[x]) = 1 - e^{-\lambda \cdot \text{median}[x]}= \frac{1}{2}\]
+\[\therefore \text{Median} = \frac{\ln{2}}{\lambda}\]
+\[\text{Mode} = 0\]
+
+\chapter{Fun Fact}\label{fun-fact}
+
+\textbf{A fun fact introduced by Dr.~Soo during the departmental social event:}
+
+Given that \(U_1, U_2, U_3...\) are independent and identically distributed where \(U_i \sim \text{unif}[0,1]\).\\
+Let \(T = \textbf{min}\{n \leq 1: U_1 + U_2 + ... + U_n > 1\}\), where \(n = 2, 3, 4..., etc\).\\
+The expected value of \(T\) approximately equals to \(e\), i.e., \(\mathbb{E}(T) \approx e\).
+
+We can prove this statement by running an R simulation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{T }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{() \{}
+\NormalTok{  n }\OtherTok{=} \DecValTok{0}
+\NormalTok{  t }\OtherTok{=} \DecValTok{0}
+  \ControlFlowTok{while}\NormalTok{ (t }\SpecialCharTok{\textless{}} \DecValTok{1}\NormalTok{) \{}
+\NormalTok{    t }\OtherTok{\textless{}{-}}\NormalTok{ t }\SpecialCharTok{+} \FunctionTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{    n }\OtherTok{\textless{}{-}}\NormalTok{ n }\SpecialCharTok{+} \DecValTok{1}
+\NormalTok{  \}}
+\NormalTok{  n}
+\NormalTok{\}}
+\NormalTok{Expected\_Value }\OtherTok{=} \FunctionTok{mean}\NormalTok{(}\FunctionTok{replicate}\NormalTok{(}\DecValTok{100000}\NormalTok{, }\FunctionTok{T}\NormalTok{()))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## E(T) = 2.71657
+\end{verbatim}
+
+\chapter{Exercise 8}\label{exercise-8}
+
+The data in the table below were collected in order to assess whether a new vaccination was
+successful in reducing the number of cases of influenza (flu).
+
+These data result from a survey of 1000 people in the spring following the winter in question. Each
+person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu vaccine injections.
+
+\begin{itemize}
+\tightlist
+\item
+  Let \(V\) be a random variable equal to the number of flu injections that the person had.
+\item
+  Let \(F\) be a random variable indicating whether the person did have flu (\(F = 1\)) or not (\(F = 0\)).
+\end{itemize}
+
+\section{Contingency Table}\label{contingency-table}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-10}Contingency Table with Expected Frequencies}
+\centering
+\begin{tabular}[t]{l|l|l|l|l}
+\hline
+  & V = 0 & V = 1 & V = 2 & Sum\\
+\hline
+F = 1 & 24 (14.398) & 9 (5.014) & 13 (26.588) & 46\\
+\hline
+F = 0 & 289 (298.602) & 100 (103.986) & 565 (551.412) & 954\\
+\hline
+Sum & 313 & 109 & 578 & 1000\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Expected Frequencies}\label{expected-frequencies}
+
+\textbf{Estimate the expected frequencies under the assumption that \(V\) and \(F\) are independent.}\\
+If \(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F = 1 \mid V = 2) = P(F = 0)\), then we expect that
+
+\begin{itemize}
+\tightlist
+\item
+  \(P(F = 1) \times 313\) people who didn't have flu without being vaccinated
+\item
+  \(P(F = 1) \times 109\) people who didn't have flu with \(1\) flu vaccine injection
+\item
+  \(P(F = 1) \times 578\) people who didn't have flu with \(2\) flu vaccine injection
+\end{itemize}
+
+\[\hat{P}(F = 1) = \frac{46}{1000} = 0.046\]
+\[\hat{\mu}_{11} = \hat{P}(F = 1) \times 313 = 0.046 \times 313 = 14.398\]
+\[\hat{\mu}_{12} = \hat{P}(F = 1) \times 109 = 0.046 \times 109 = 5.014\]
+\[\hat{\mu}_{13} = \hat{P}(F = 1) \times 578 = 0.046 \times 578 = 26.588\]
+\[\hat{\mu}_{21} = 313 - 14.398 = 298.602\]
+\[\hat{\mu}_{22} = 109 - 5.014 = 103.986\]
+\[\hat{\mu}_{23} = 578 - 26.588 = 551.412\]
+
+\section{Pearson Residuals}\label{pearson-residuals}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-11}Pearson Residuals}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & V = 0 & V = 1 & V = 2\\
+\hline
+F = 1 & 2.53 & 1.78 & -2.64\\
+\hline
+F = 0 & -0.56 & -0.39 & 0.58\\
+\hline
+\end{tabular}
+\end{table}
+
+\[r_{11}^{P} = \frac{24 - 14.398}{\sqrt{14.398}} = 2.53\]
+\[r_{12}^{P} = \frac{9 - 5.014}{\sqrt{5.014}} = 1.78\]
+\[r_{13}^{P} = \frac{13 - 26.588}{\sqrt{26.588}} = -2.64\]
+\[r_{21}^{P} = \frac{289 - 298.602-}{\sqrt{298.602}} = -0.56\]
+\[r_{22}^{P} = \frac{100 - 103.986}{\sqrt{103.986}} = -0.39\]
+\[r_{23}^{P} = \frac{565 - 551.412}{\sqrt{551.412}} = 0.58\]
+
+\section{Standardized Pearson Residuals}\label{standardized-pearson-residuals}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-12}Standardized Pearson Residuals}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & V = 0 & V = 1 & V = 2\\
+\hline
+F = 1 & 3.13 & 1.93 & -4.15\\
+\hline
+F = 0 & -3.13 & -1.93 & 4.15\\
+\hline
+\end{tabular}
+\end{table}
+
+\[r_{11}^{S} = \frac{r_{11}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+1})}} = \frac{2.53}{\sqrt{(1-0.046)(1-0.313)}} = 3.13\]
+\[r_{12}^{S} = \frac{r_{12}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+2})}} = \frac{1.78}{\sqrt{(1-0.046)(1-0.109)}} = 1.93\]
+\[r_{13}^{S} = \frac{r_{13}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+3})}} = \frac{-2.64}{\sqrt{(1-0.046)(1-0.578)}} = -4.16\]
+\[r_{21}^{S} = \frac{r_{21}^{P}} {\sqrt{(1-\hat{p}_{2+})(1-\hat{p}_{+1})}} = \frac{-0.56}{\sqrt{(1-0.954)(1-0.313)}} = -3.15\]
+\[r_{22}^{S} = \frac{r_{22}^{P}} {\sqrt{(1-\hat{p}_{2+})(1-\hat{p}_{+2})}} = \frac{-0.39}{\sqrt{(1-0.954)(1-0.109)}} = -1.93\]
+\[r_{23}^{S} = \frac{r_{23}^{P}} {\sqrt{(1-\hat{p}_{2+})(1-\hat{p}_{+3})}} = \frac{0.58}{\sqrt{(1-0.954)(1-0.578)}} = 4.16\]
+
+\section{Association}\label{association}
+
+\textbf{Does it appear that there is an association between the number of flu injections and catching the flu? Justify your answer.}\\
+
+\textbf{Method 1}: We can check the association by conducting a Chi-Square Test of Independence.\\
+Null hypothesis \(H_0\): There is no association between the number of flu injections and catching the flu.\\
+If the null hypothesis \(H_0\) is true, and all the \(\hat{\mu}_{ij}\) are large enough (\(\hat{\mu}_{ij} \geq 5\) for all i, j), then \(X \mathrel{\dot\sim} \chi_{2}^{2}\).
+\[\begin{aligned}
+  \chi_{2}^{2} &= \Sigma_{i.j} \frac{(n_{ij} - \hat{\mu}_{ij})^2}{\hat{\mu}_{ij}} \\
+  &= \frac{(24 - 14.4)^2}{14.40} + \frac{(9 - 5.01)^2}{5.01} + \frac{(13-26.59)^2}{26.59} + \frac{(289 - 298.60)^2}{298.60} + \frac{(100 - 103.99)^2}{103.99} + \frac{(565 - 551.41)^2}{551.41} \\
+  &= 17.32
+\end{aligned}\]
+
+We can plot the Chi-Square Density function:\\
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+By inspecting the plot, we find that \(P(\chi_{2}^{2} \geq 17.32)\) is extremely small. We can use R to confirm that \(P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005\) (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.
+
+On the other hand, we can conduct the Chi-Square Test using R directly:
+
+\begin{verbatim}
+
+    Pearson's Chi-squared test
+
+data:  data
+X-squared = 17, df = 2, p-value = 0.0002
+\end{verbatim}
+
+Since the p-value calculated by R is \(0.000174 \ll 0.005\), which is small enough to reject the null hypothesis, we can prove that there is an association between the number of flu injections and catching flu.\\
+
+\textbf{Method 2}: We can test the association by estimating the conditional probabilities.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-15}Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & $i = 0$ & $i = 1$ & $i = 2$\\
+\hline
+$\hat{P}(V = i \mid F = 1)$ & 0.52 & 0.2 & 0.28\\
+\hline
+$\hat{P}(V = i \mid F = 0)$ & 0.30 & 0.1 & 0.59\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-15}Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & $i = 0$ & $i = 1$ & $i = 2$\\
+\hline
+$\hat{P}(F = 1 \mid V = i)$ & 0.08 & 0.08 & 0.02\\
+\hline
+$\hat{P}(F = 0 \mid V = i)$ & 0.92 & 0.92 & 0.98\\
+\hline
+\end{tabular}
+\end{table}
+
+We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above (Table 4), or do it the other way around (Table 5). We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about \(70\%\) of people who didn't catch flu at least injected one dose of vaccine. On the other hand, we can conclude that the proportion of people who injected one dose of vaccine catching flu is the same as the proportion of people who didn't inject vaccines at all catching flu. But the proportion of people catching flu among those who injected two doses of vaccines has decreased significantly (a quarter comparing to the former ones). Therefore, there is an obvious association between doses of vaccines injected and catching flu or not. Injecting both doses of vaccines may effectively reduce the risk of catching flu, while on the other hand, injecting merely one dose of vaccine may not necessarily be effective.
+
+\section{Improvement}\label{improvement}
+
+\textbf{Suppose that each person in this survey made their own decision whether to have \(0\), \(1\), or \(2\) vaccine injections. Can you see a potential problem with this? What would be a better way to find out how effective is the vaccine at preventing flu?}\\
+The data collected may be unreliable if anyone among the sampled population reported the wrong data. It would further leads to the inaccuracy of our test result of independence / association of these variables.\\
+A better way to conduct this research is that we randomly draw samples of the same size from people who haven't injected the vaccine, people who have had 1 injection of the vaccine, and people who have had 2 injections of the vaccine based on their medical record. Then, conduct a survey among these three sampled groups of people and see if they have had flu or not.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
