@@ -235,24 +235,24 @@ person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu v
 <tbody>
 <tr class="odd">
 <td align="left">F = 1</td>
-<td align="left">24 (6.4975)</td>
-<td align="left">9 (6.2675)</td>
-<td align="left">13 (33.235)</td>
+<td align="left">24 (14.398)</td>
+<td align="left">9 (5.014)</td>
+<td align="left">13 (26.588)</td>
 <td align="left">46</td>
 </tr>
 <tr class="even">
 <td align="left">F = 0</td>
-<td align="left">89 (106.5025)</td>
-<td align="left">100 (102.7325)</td>
-<td align="left">565 (544.765)</td>
-<td align="left">754</td>
+<td align="left">289 (298.602)</td>
+<td align="left">100 (103.986)</td>
+<td align="left">565 (551.412)</td>
+<td align="left">954</td>
 </tr>
 <tr class="odd">
 <td align="left">Sum</td>
-<td align="left">113</td>
+<td align="left">313</td>
 <td align="left">109</td>
 <td align="left">578</td>
-<td align="left">800</td>
+<td align="left">1000</td>
 </tr>
 </tbody>
 </table>
@@ -289,15 +289,15 @@ If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F =
 <tbody>
 <tr class="odd">
 <td align="left">F = 1</td>
-<td align="right">6.9</td>
-<td align="right">1.09</td>
-<td align="right">-3.51</td>
+<td align="right">2.53</td>
+<td align="right">1.78</td>
+<td align="right">-2.64</td>
 </tr>
 <tr class="even">
 <td align="left">F = 0</td>
-<td align="right">-1.7</td>
-<td align="right">-0.27</td>
-<td align="right">0.87</td>
+<td align="right">-0.56</td>
+<td align="right">-0.39</td>
+<td align="right">0.58</td>
 </tr>
 </tbody>
 </table>
@@ -323,15 +323,15 @@ If <span class="math inline">\(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F =
 <tbody>
 <tr class="odd">
 <td align="left">F = 1</td>
-<td align="right">7.46</td>
-<td align="right">1.184</td>
-<td align="right">-5.53</td>
+<td align="right">3.13</td>
+<td align="right">1.93</td>
+<td align="right">-4.15</td>
 </tr>
 <tr class="even">
 <td align="left">F = 0</td>
-<td align="right">-3.63</td>
-<td align="right">-0.576</td>
-<td align="right">2.69</td>
+<td align="right">-3.13</td>
+<td align="right">-1.93</td>
+<td align="right">4.15</td>
 </tr>
 </tbody>
 </table>
@@ -363,7 +363,7 @@ If the null hypothesis <span class="math inline">\(H_0\)</span> is true, and all
     Pearson&#39;s Chi-squared test
 
 data:  data
-X-squared = 64, df = 2, p-value = 1e-14</code></pre>
+X-squared = 17, df = 2, p-value = 0.0002</code></pre>
 <p>Since the p-value calculated by R is <span class="math inline">\(0.000174 \ll 0.005\)</span>, which is small enough to reject the null hypothesis, we can prove that there is an association between the number of flu injections and catching flu.<br />
 </p>
 <p><strong>Method 2</strong>: We can test the association by estimating the conditional probabilities.</p>

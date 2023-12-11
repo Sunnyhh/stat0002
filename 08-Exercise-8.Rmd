@@ -11,7 +11,7 @@ person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu v
 
 ## Contingency Table
 ```{r, echo = F}
-data = matrix(c(24, 9, 13, 89, 100, 565), nrow = 2, byrow = TRUE)
+data = matrix(c(24, 9, 13, 289, 100, 565), nrow = 2, byrow = TRUE)
 rownames(data) <- c("F = 1", "F = 0")
 colnames(data) <- c("V = 0", "V = 1", "V = 2")
 xsq <- chisq.test(data)
