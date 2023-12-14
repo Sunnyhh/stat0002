@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.14)  14 DEC 2023 14:38
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.14)  14 DEC 2023 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,61 +731,80 @@ Overfull \hbox (85.5pt too wide) in paragraph at lines 160--160
 []\TU/lmtt/m/n/10 ## [31] 2039 2727 2810 2864 2921 2921 2921 2921 2921 2921 2922 2922 2922 2922 2922[] 
  []
 
+File: unnamed-chunk-2-1.png Graphic file (type bmp)
+<unnamed-chunk-2-1.png>
+
+Overfull \hbox (154.51575pt too wide) in paragraph at lines 176--178
+\TU/lmr/bx/n/10 Create a boxplot of these data. [] 
+ []
+
+
+Underfull \vbox (badness 2343) has occurred while \output is active []
+
 [7]
-File: _main_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-2-1.pdf>
-File: _main_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-3-1.pdf>
+File: unnamed-chunk-3-1.png Graphic file (type bmp)
+<unnamed-chunk-3-1.png>
+File: unnamed-chunk-3-2.png Graphic file (type bmp)
+<unnamed-chunk-3-2.png>
+
+Underfull \hbox (badness 2753) in paragraph at lines 183--186
+\TU/lmr/bx/n/10 Create histograms of these data with with different breaks.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
+[]
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [8]
-File: _main_files/figure-latex/unnamed-chunk-3-2.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-3-2.pdf>
-
-Underfull \vbox (badness 1226) has occurred while \output is active []
-
-[9]
-File: _main_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/unnamed-chunk-5-1.pdf>
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[10]
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 278.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 278.
-[11] [12
+[9] [10]
+File: unnamed-chunk-5-1.png Graphic file (type bmp)
+<unnamed-chunk-5-1.png>
 
-]
+Overfull \hbox (145.6591pt too wide) in paragraph at lines 218--220
+\TU/lmr/bx/n/10 Create a dot plot of the data. [] 
+ []
+
+[11]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 250.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 250.
+[12]
 Week 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[13]
+[13
+
+]
 ! Undefined control sequence.
-l.323 \[\require
+l.295 \[\require
                 {cancel} 
 Here is how much of TeX's memory you used:
- 17323 strings out of 476831
- 316389 string characters out of 5803834
+ 17315 strings out of 476831
+ 315120 string characters out of 5803834
  1928106 words of memory out of 5000000
- 39062 multiletter control sequences out of 15000+600000
+ 39054 multiletter control sequences out of 15000+600000
  564528 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,120p,462b,406s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,8n,120p,399b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on _main.pdf (13 pages).

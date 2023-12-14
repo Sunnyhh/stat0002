@@ -196,8 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="exercise-9.html"><a href="exercise-9.html"><i class="fa fa-check"></i><b>9</b> Exercise 9</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="exercise-9.html"><a href="exercise-9.html#question-1-5"><i class="fa fa-check"></i><b>9.1</b> Question 1</a></li>
-<li class="chapter" data-level="9.2" data-path="exercise-9.html"><a href="exercise-9.html#question-3-4"><i class="fa fa-check"></i><b>9.2</b> Question 3</a></li>
-<li class="chapter" data-level="9.3" data-path="exercise-9.html"><a href="exercise-9.html#question-3-5"><i class="fa fa-check"></i><b>9.3</b> Question 3</a></li>
+<li class="chapter" data-level="9.2" data-path="exercise-9.html"><a href="exercise-9.html#question-2-5"><i class="fa fa-check"></i><b>9.2</b> Question 2</a></li>
+<li class="chapter" data-level="9.3" data-path="exercise-9.html"><a href="exercise-9.html#question-3-4"><i class="fa fa-check"></i><b>9.3</b> Question 3</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -226,17 +226,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Let <span class="math inline">\(T = \textbf{min}\{n \leq 1: U_1 + U_2 + ... + U_n &gt; 1\}\)</span>, where <span class="math inline">\(n = 2, 3, 4..., etc\)</span>.<br />
 The expected value of <span class="math inline">\(T\)</span> approximately equals to <span class="math inline">\(e\)</span>, i.e., <span class="math inline">\(\mathbb{E}(T) \approx e\)</span>.</p>
 <p>We can prove this statement by running an R simulation:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="fun-fact.html#cb15-1" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb15-2"><a href="fun-fact.html#cb15-2" tabindex="-1"></a>  n <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb15-3"><a href="fun-fact.html#cb15-3" tabindex="-1"></a>  t <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb15-4"><a href="fun-fact.html#cb15-4" tabindex="-1"></a>  <span class="cf">while</span> (t <span class="sc">&lt;</span> <span class="dv">1</span>) {</span>
-<span id="cb15-5"><a href="fun-fact.html#cb15-5" tabindex="-1"></a>    t <span class="ot">&lt;-</span> t <span class="sc">+</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
-<span id="cb15-6"><a href="fun-fact.html#cb15-6" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb15-7"><a href="fun-fact.html#cb15-7" tabindex="-1"></a>  }</span>
-<span id="cb15-8"><a href="fun-fact.html#cb15-8" tabindex="-1"></a>  n</span>
-<span id="cb15-9"><a href="fun-fact.html#cb15-9" tabindex="-1"></a>}</span>
-<span id="cb15-10"><a href="fun-fact.html#cb15-10" tabindex="-1"></a>Expected_Value <span class="ot">=</span> <span class="fu">mean</span>(<span class="fu">replicate</span>(<span class="dv">100000</span>, <span class="fu">T</span>()))</span></code></pre></div>
-<pre><code>## E(T) = 2.7254</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="fun-fact.html#cb11-1" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb11-2"><a href="fun-fact.html#cb11-2" tabindex="-1"></a>  n <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb11-3"><a href="fun-fact.html#cb11-3" tabindex="-1"></a>  t <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb11-4"><a href="fun-fact.html#cb11-4" tabindex="-1"></a>  <span class="cf">while</span> (t <span class="sc">&lt;</span> <span class="dv">1</span>) {</span>
+<span id="cb11-5"><a href="fun-fact.html#cb11-5" tabindex="-1"></a>    t <span class="ot">&lt;-</span> t <span class="sc">+</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
+<span id="cb11-6"><a href="fun-fact.html#cb11-6" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb11-7"><a href="fun-fact.html#cb11-7" tabindex="-1"></a>  }</span>
+<span id="cb11-8"><a href="fun-fact.html#cb11-8" tabindex="-1"></a>  n</span>
+<span id="cb11-9"><a href="fun-fact.html#cb11-9" tabindex="-1"></a>}</span>
+<span id="cb11-10"><a href="fun-fact.html#cb11-10" tabindex="-1"></a>Expected_Value <span class="ot">=</span> <span class="fu">mean</span>(<span class="fu">replicate</span>(<span class="dv">100000</span>, <span class="fu">T</span>()))</span></code></pre></div>
+<pre><code>## E(T) = 2.71188</code></pre>
 
 </div>
             </section>

@@ -15,7 +15,7 @@ We should use $log Y$ as the response variable in this linear regression, becaus
 **(b) Why have we chosen to use $z = x - 1986$ as the explanatory variable, rather than $x$?** \
 Because the data we collected starts from 1916. And essentially there isn't any data for "year x = 0". We want to avoid extrapolation. If we use $z = x - 1986$, we are not comparing the data relative to year 0 anymore, but to the year 1986, and therefore the data could be interpreted in a more sensible way.
 
-## Question 3
+## Question 2
 A linear regression model of $log Y$ is fitted using least squares estimation. \
 **Give an equation and some text to define this model and its assumptions.** \
 $$log Y_i =  \alpha + \beta z_i + \epsilon_i \quad i = 0, 1, 2, ..., 70$$

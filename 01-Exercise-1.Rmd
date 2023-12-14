@@ -12,18 +12,14 @@ Therefore, the five-number summary of the dataset is (31, 1460, 1460.5, 2921, 44
 
 ## Question 2
 **Create a boxplot of these data.**
-```{r out.width='80%', fig.asp=.75, fig.align='center'}
-boxplot(days, horizontal = T, xlab = "Mystery Variable (Days)")
-```
+![](unnamed-chunk-2-1.png)
 
 Combining the shape of this boxplot and the data summary we acquired above, the shape of the distribution of this dataset is slightly positively skewed. There are no outliers. All the data values are concluded in the boxplot. The boxplot visualizes the five-number summary as well as the location, shape, and spread of the distribution.
 
 ## Question 3
 **Create histograms of these data with with different breaks.**
-```{r out.width='80%', fig.asp=.75, fig.align='center'}
-hist(days, breaks = c(0, 500, 1500, 2500, 3500, 4500), freq = F)
-hist(days, breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500), freq = F)
-```
+![](unnamed-chunk-3-1.png)
+![](unnamed-chunk-3-2.png)
 
 While the first histogram shows us a rough shape and distribution, the second histogram is more detailed with more breaks. We can easily identify the modes of distribution using histograms and acquire a basic shape of the distribution as well.
 
@@ -36,9 +32,7 @@ We could conclude from this plot that the shape of this dataset follows a bimoda
 
 ## Question 5
 **Create a dot plot of the data.**
-```{r out.width='80%', fig.asp=.75, fig.align='center'}
-stripchart(days, method = "stack", at = 0, offset = 1, pch = 16, xlab = "Mysterious Variable (Days)")
-``` 
+![](unnamed-chunk-5-1.png)
 
 The dot plot confirms our conclusion from the stem-and-leaf plot stated above.
 

@@ -174,36 +174,15 @@ Therefore, the five-number summary of the dataset is (31, 1460, 1460.5, 2921, 44
 \section{Question 2}\label{question-2}
 
 \textbf{Create a boxplot of these data.}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{boxplot}\NormalTok{(days, }\AttributeTok{horizontal =}\NormalTok{ T, }\AttributeTok{xlab =} \StringTok{"Mystery Variable (Days)"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\includegraphics{unnamed-chunk-2-1.png}
 
 Combining the shape of this boxplot and the data summary we acquired above, the shape of the distribution of this dataset is slightly positively skewed. There are no outliers. All the data values are concluded in the boxplot. The boxplot visualizes the five-number summary as well as the location, shape, and spread of the distribution.
 
 \section{Question 3}\label{question-3}
 
 \textbf{Create histograms of these data with with different breaks.}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(days, }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{2500}\NormalTok{, }\DecValTok{3500}\NormalTok{, }\DecValTok{4500}\NormalTok{), }\AttributeTok{freq =}\NormalTok{ F)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-3-1} \end{center}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(days, }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{500}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{1500}\NormalTok{, }\DecValTok{2000}\NormalTok{, }\DecValTok{2500}\NormalTok{, }\DecValTok{3000}\NormalTok{, }\DecValTok{3500}\NormalTok{, }\DecValTok{4000}\NormalTok{, }\DecValTok{4500}\NormalTok{), }\AttributeTok{freq =}\NormalTok{ F)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-3-2} \end{center}
+\includegraphics{unnamed-chunk-3-1.png}
+\includegraphics{unnamed-chunk-3-2.png}
 
 While the first histogram shows us a rough shape and distribution, the second histogram is more detailed with more breaks. We can easily identify the modes of distribution using histograms and acquire a basic shape of the distribution as well.
 
@@ -237,14 +216,7 @@ We could conclude from this plot that the shape of this dataset follows a bimoda
 \section{Question 5}\label{question-5}
 
 \textbf{Create a dot plot of the data.}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{stripchart}\NormalTok{(days, }\AttributeTok{method =} \StringTok{"stack"}\NormalTok{, }\AttributeTok{at =} \DecValTok{0}\NormalTok{, }\AttributeTok{offset =} \DecValTok{1}\NormalTok{, }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Mysterious Variable (Days)"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\includegraphics{unnamed-chunk-5-1.png}
 
 The dot plot confirms our conclusion from the stem-and-leaf plot stated above.
 
@@ -652,7 +624,7 @@ We can prove this statement by running an R simulation:
 \end{Shaded}
 
 \begin{verbatim}
-## E(T) = 2.71646
+## E(T) = 2.71368
 \end{verbatim}
 
 \chapter{Exercise 8}\label{exercise-8}
@@ -675,7 +647,7 @@ person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu v
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-10}Contingency Table with Expected Frequencies}
+\caption{\label{tab:unnamed-chunk-7}Contingency Table with Expected Frequencies}
 \centering
 \begin{tabular}[t]{l|l|l|l|l}
 \hline
@@ -717,7 +689,7 @@ If \(P(F = 1 \mid V = 0) = P(F = 1 \mid V = 1) = P(F = 1 \mid V = 2) = P(F = 0)\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-11}Pearson Residuals}
+\caption{\label{tab:unnamed-chunk-8}Pearson Residuals}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
@@ -741,7 +713,7 @@ F = 0 & -0.56 & -0.39 & 0.58\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-12}Standardized Pearson Residuals}
+\caption{\label{tab:unnamed-chunk-9}Standardized Pearson Residuals}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
@@ -776,7 +748,7 @@ If the null hypothesis \(H_0\) is true, and all the \(\hat{\mu}_{ij}\) are large
 
 We can plot the Chi-Square Density function:\\
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-13-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-10-1.pdf}
 
 By inspecting the plot, we find that \(P(\chi_{2}^{2} \geq 17.32)\) is extremely small. We can use R to confirm that \(P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005\) (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.
 
@@ -796,7 +768,7 @@ Since the p-value calculated by R is \(0.000174 \ll 0.005\), which is small enou
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-15}Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not}
+\caption{\label{tab:unnamed-chunk-12}Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
@@ -811,7 +783,7 @@ $\hat{P}(V = i \mid F = 0)$ & 0.30 & 0.1 & 0.59\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-15}Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected}
+\caption{\label{tab:unnamed-chunk-12}Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
@@ -850,7 +822,7 @@ We should use \(log Y\) as the response variable in this linear regression, beca
 \textbf{(b) Why have we chosen to use \(z = x - 1986\) as the explanatory variable, rather than \(x\)?}\\
 Because the data we collected starts from 1916. And essentially there isn't any data for ``year x = 0''. We want to avoid extrapolation. If we use \(z = x - 1986\), we are not comparing the data relative to year 0 anymore, but to the year 1986, and therefore the data could be interpreted in a more sensible way.
 
-\section{Question 3}\label{question-3-4}
+\section{Question 2}\label{question-2-5}
 
 A linear regression model of \(log Y\) is fitted using least squares estimation.\\
 \textbf{Give an equation and some text to define this model and its assumptions.}\\
@@ -872,7 +844,7 @@ Assumptions:
   \(\epsilon_i \sim N(0, \sigma^2), \ i \in 1, ..., n\)
 \end{itemize}
 
-\section{Question 3}\label{question-3-5}
+\section{Question 3}\label{question-3-4}
 
 The estimate of the intercept is \(-3.25\) and the estimate of the coefficient of \(z\) is \(-0.062\). The estimate of the error variance is \(0.64\).
 
