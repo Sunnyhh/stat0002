@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.11)  14 DEC 2023 14:32
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.14)  14 DEC 2023 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **_main.tex
 (./_main.tex
 LaTeX2e <2023-11-01>
-L3 programming layer <2023-12-08>
+L3 programming layer <2023-12-11>
 (/Users/sunny/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
 (/Users/sunny/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -98,7 +98,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (/Users/sunny/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ) (/Users/sunny/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/sunny/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-12-08 L3 programming layer (loader) 
+Package: expl3 2023-12-11 L3 programming layer (loader) 
 (/Users/sunny/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2023-11-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count270
@@ -780,10 +780,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 l.323 \[\require
                 {cancel} 
 Here is how much of TeX's memory you used:
- 17323 strings out of 476827
- 316389 string characters out of 5803733
- 1928119 words of memory out of 5000000
- 39066 multiletter control sequences out of 15000+600000
+ 17323 strings out of 476831
+ 316389 string characters out of 5803834
+ 1928106 words of memory out of 5000000
+ 39062 multiletter control sequences out of 15000+600000
  564528 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,8n,120p,462b,406s stack positions out of 10000i,1000n,20000p,200000b,200000s

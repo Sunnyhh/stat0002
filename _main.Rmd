@@ -582,7 +582,7 @@ Assumptions:
 * **Uncorrelatedness of Errors**: the errors have no linear association.
 * $\epsilon_i \sim N(0, \sigma^2), \ i \in 1, ..., n$
 
-## Question 4
+## Question 3
 The estimate of the intercept is $-3.25$ and the estimate of the coefficient of $z$ is $-0.062$. The estimate of the error variance is $0.64$. 
 
 **Give interpretations of these estimates. Your answer should relate to the context of this problem, that is, tornados and should be stated in terms of the mean of the distribution of $Y$ not $log Y$.** \
