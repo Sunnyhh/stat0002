@@ -652,7 +652,7 @@ We can prove this statement by running an R simulation:
 \end{Shaded}
 
 \begin{verbatim}
-## E(T) = 2.71657
+## E(T) = 2.72058
 \end{verbatim}
 
 \chapter{Exercise 8}\label{exercise-8}
@@ -831,6 +831,90 @@ We can either compare the estimated conditional probabilities of the doses of va
 \textbf{Suppose that each person in this survey made their own decision whether to have \(0\), \(1\), or \(2\) vaccine injections. Can you see a potential problem with this? What would be a better way to find out how effective is the vaccine at preventing flu?}\\
 The data collected may be unreliable if anyone among the sampled population reported the wrong data. It would further leads to the inaccuracy of our test result of independence / association of these variables.\\
 A better way to conduct this research is that we randomly draw samples of the same size from people who haven't injected the vaccine, people who have had 1 injection of the vaccine, and people who have had 2 injections of the vaccine based on their medical record. Then, conduct a survey among these three sampled groups of people and see if they have had flu or not.
+
+\chapter{Exercise 9}\label{exercise-9}
+
+Data are collected on the number of tornados, and the number of people killed by those tornados, in the USA in each of the 71 years from 1916 to 1986 inclusive.
+
+In the plot below on the left the mean number (\(Y\)) of people killed per tornado is plotted against year (\(x\)). The plot on the right is of the same data but \(Y\) is plotted on a log scale.
+
+\includegraphics{tornado.png}
+
+\section{Question 1}\label{question-1-5}
+
+Consider a simple linear regression model, with \(z = x - 1986\) as the explanatory variable. We consider using \(Y\) or \(log Y\) as the response variable, where we use \(log Y\) to denote the natural logarithm of \(Y\).
+
+\textbf{(a) Should we use \(Y\) or \(log Y\) as the response variable in this linear regression? Explain your answer.}\\
+We should use \(log Y\) as the response variable in this linear regression, because we can tell that the plot on the right has stronger linearity and relatively more constant variance of errors comparing to the plot on the left.
+
+\textbf{(b) Why have we chosen to use \(z = x - 1986\) as the explanatory variable, rather than \(x\)?}\\
+Because the data we collected starts from 1916. And essentially there isn't any data for ``year x = 0''. We want to avoid extrapolation. If we use \(z = x - 1986\), we are not comparing the data relative to year 0 anymore, but to the year 1986, and therefore the data could be interpreted in a more sensible way.
+
+\section{Question 3}\label{question-3-4}
+
+A linear regression model of \(log Y\) is fitted using least squares estimation.\\
+\textbf{Give an equation and some text to define this model and its assumptions.}\\
+\[log Y_i =  \alpha + \beta z_i + \epsilon_i \quad i = 0, 1, 2, ..., 70\]
+Or, on the other hand,
+\[log Y_i = \alpha + \beta (x_i - 1986) + \epsilon_i = \alpha -1986\beta + \beta x_i + \epsilon_i\]
+
+Assumptions:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Linearity}: the conditional mean of \(Y\) given \(x\) is a linear function of \(x\).
+\item
+  \textbf{Constant Error Variance}: the variability of \(Y\) is the same for all values of \(x\).
+\item
+  \textbf{Uncorrelatedness of Errors}: the errors have no linear association.
+\item
+  \(\epsilon_i \sim N(0, \sigma^2), \ i \in 1, ..., n\)
+\end{itemize}
+
+\section{Question 4}\label{question-4-1}
+
+The estimate of the intercept is \(-3.25\) and the estimate of the coefficient of \(z\) is \(-0.062\). The estimate of the error variance is \(0.64\).
+
+\textbf{Give interpretations of these estimates. Your answer should relate to the context of this problem, that is, tornados and should be stated in terms of the mean of the distribution of \(Y\) not \(log Y\).}\\
+
+\begin{itemize}
+\item
+  Inferring \(\mathbb{E}(Y \mid Z = z)\). We assume that the error distribution is normal.
+  We are given that
+  \[log Y_i = -3.25 - 0.062z_i + \epsilon_i \qquad i = 0, 1, 2, ..., 70\]
+  \[
+  \begin{aligned}
+  log Y_i &= -3.25 - 0.062(x_i -1986) + \epsilon_i \\
+        &= 119.88 - 0.062x_i + \epsilon_i
+  \end{aligned}
+  \]
+  where \(\epsilon \in N(0, \sigma^2)\). Therefore,
+  \[Y = e^{-3.25-0.062z + \epsilon} \quad \text{or} \quad Y = e^{119.880-0.062x + \epsilon}\]
+  It can be shown that \(\mathbb{E}(e^{\epsilon}) = e^{\frac{\sigma^2}{2}}\). Taking the expectation gives
+  \[\therefore \mathbb{E}(Y \mid X = x) = e^{119.88 - 0.062x + \sigma^2/2}\]
+\item
+  Inferring \(\text{median}(Y \mid Z = z)\). We assume that the error distribution is symmetric about 0, which implies that
+  \[\mathbb{E}(log Y \mid Z = z) = \text{median}(log Y \mid Z = z)\]
+  Therefore,
+  \[\text{median}(Y \mid Z = z) = exp{\text{median}(log Y \mid Z = z)} = e^{-3.25-0.062z}\]
+  \[\therefore \text{median}(Y \mid X = x) = e^{119.88 - 0.062x}\]
+\end{itemize}
+
+Therefore, combining the conditions we inferred, we can tell that
+\[\mathbb{E}(Y \mid X = x) = e^{\sigma^2 / 2} \ \text{median}(Y \mid X = x)\]
+Since the error variance \(\sigma^2\) is small,
+\[\mathbb{E}(Y \mid X = x) \approx \text{median}(Y \mid X = x)\]
+
+\textbf{Interpretation}:
+
+\begin{itemize}
+\tightlist
+\item
+  In the year 1986 (when \(x = 1986\) or \(z = 0\)), \(\hat{median}(Y \mid X = 1986) \approx 0.04\). Therefore, it implies that it is expected the mean, as well as the median, of the number of people died of tornado in the year 1986 is about 0.04 people.
+\item
+  The coefficient \(\beta\) represents that the number of people killed by tornado will drop by approximately 0.062 people per year.
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 

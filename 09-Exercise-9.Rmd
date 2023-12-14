@@ -1,0 +1,65 @@
+# Exercise 9
+
+Data are collected on the number of tornados, and the number of people killed by those tornados, in the USA in each of the 71 years from 1916 to 1986 inclusive.
+
+In the plot below on the left the mean number ($Y$) of people killed per tornado is plotted against year ($x$). The plot on the right is of the same data but $Y$ is plotted on a log scale. 
+
+![](tornado.png)
+
+## Question 1
+Consider a simple linear regression model, with $z = x - 1986$ as the explanatory variable. We consider using $Y$ or $log Y$ as the response variable, where we use $log Y$ to denote the natural logarithm of $Y$.
+
+**(a) Should we use $Y$ or $log Y$ as the response variable in this linear regression? Explain your answer.** \
+We should use $log Y$ as the response variable in this linear regression, because we can tell that the plot on the right has stronger linearity and relatively more constant variance of errors comparing to the plot on the left.
+
+**(b) Why have we chosen to use $z = x - 1986$ as the explanatory variable, rather than $x$?** \
+Because the data we collected starts from 1916. And essentially there isn't any data for "year x = 0". We want to avoid extrapolation. If we use $z = x - 1986$, we are not comparing the data relative to year 0 anymore, but to the year 1986, and therefore the data could be interpreted in a more sensible way.
+
+## Question 3
+A linear regression model of $log Y$ is fitted using least squares estimation. \
+**Give an equation and some text to define this model and its assumptions.** \
+$$log Y_i =  \alpha + \beta z_i + \epsilon_i \quad i = 0, 1, 2, ..., 70$$
+Or, on the other hand,
+$$log Y_i = \alpha + \beta (x_i - 1986) + \epsilon_i = \alpha -1986\beta + \beta x_i + \epsilon_i$$
+
+Assumptions:
+
+* **Linearity**: the conditional mean of $Y$ given $x$ is a linear function of $x$.
+* **Constant Error Variance**: the variability of $Y$ is the same for all values of $x$.
+* **Uncorrelatedness of Errors**: the errors have no linear association.
+* $\epsilon_i \sim N(0, \sigma^2), \ i \in 1, ..., n$
+
+## Question 4
+The estimate of the intercept is $-3.25$ and the estimate of the coefficient of $z$ is $-0.062$. The estimate of the error variance is $0.64$. 
+
+**Give interpretations of these estimates. Your answer should relate to the context of this problem, that is, tornados and should be stated in terms of the mean of the distribution of $Y$ not $log Y$.** \
+
+* Inferring $\mathbb{E}(Y \mid Z = z)$. We assume that the error distribution is normal.
+We are given that
+$$log Y_i = -3.25 - 0.062z_i + \epsilon_i \qquad i = 0, 1, 2, ..., 70$$
+$$
+\begin{aligned}
+log Y_i &= -3.25 - 0.062(x_i -1986) + \epsilon_i \\
+        &= 119.88 - 0.062x_i + \epsilon_i
+\end{aligned}
+$$
+where $\epsilon \in N(0, \sigma^2)$. Therefore,
+$$Y = e^{-3.25-0.062z + \epsilon} \quad \text{or} \quad Y = e^{119.880-0.062x + \epsilon}$$
+It can be shown that $\mathbb{E}(e^{\epsilon}) = e^{\frac{\sigma^2}{2}}$. Taking the expectation gives
+$$\therefore \mathbb{E}(Y \mid X = x) = e^{119.88 - 0.062x + \sigma^2/2}$$
+
+* Inferring $\text{median}(Y \mid Z = z)$. We assume that the error distribution is symmetric about 0, which implies that
+$$\mathbb{E}(log Y \mid Z = z) = \text{median}(log Y \mid Z = z)$$
+Therefore, 
+$$\text{median}(Y \mid Z = z) = exp{\text{median}(log Y \mid Z = z)} = e^{-3.25-0.062z}$$
+$$\therefore \text{median}(Y \mid X = x) = e^{119.88 - 0.062x}$$
+
+Therefore, combining the conditions we inferred, we can tell that 
+$$\mathbb{E}(Y \mid X = x) = e^{\sigma^2 / 2} \ \text{median}(Y \mid X = x)$$
+Since the error variance $\sigma^2$ is small,
+$$\mathbb{E}(Y \mid X = x) \approx \text{median}(Y \mid X = x)$$
+
+**Interpretation**:
+
+* In the year 1986 (when $x = 1986$ or $z = 0$), $\hat{median}(Y \mid X = 1986) \approx 0.04$. Therefore, it implies that it is expected the mean, as well as the median, of the number of people died of tornado in the year 1986 is about 0.04 people.
+* The coefficient $\beta$ represents that the number of people killed by tornado will drop by approximately 0.062 people per year.

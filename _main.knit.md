@@ -23,54 +23,119 @@ This document is used to document my assignments and weekly exercises of STAT000
 
 ## Question 1
 **Import a set of data "days" from STAT0002 library. Calculate the five-number summary of these data.**
-```{r}
+
+```r
 library(stat0002)
 # To give us a better understanding of the data imported:
 sort(days)
+```
+
+```
+##  [1]   31  199  491  881  895  967  989 1036 1260 1418 1427 1460 1460 1460 1460
+## [16] 1460 1460 1460 1460 1460 1460 1460 1460 1461 1461 1461 1503 1655 1886 2027
+## [31] 2039 2727 2810 2864 2921 2921 2921 2921 2921 2921 2922 2922 2922 2922 2922
+## [46] 4422
+```
+
+```r
 fivenum(days)
+```
+
+```
+## [1]   31.0 1460.0 1460.5 2921.0 4422.0
 ```
 Therefore, the five-number summary of the dataset is (31, 1460, 1460.5, 2921, 4422) days.
 
 ## Question 2
 **Create a boxplot of these data.**
-```{r out.width='80%', fig.asp=.75, fig.align='center'}
+
+```r
 boxplot(days, horizontal = T, xlab = "Mystery Variable (Days)")
 ```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 Combining the shape of this boxplot and the data summary we acquired above, the shape of the distribution of this dataset is slightly positively skewed. There are no outliers. All the data values are concluded in the boxplot. The boxplot visualizes the five-number summary as well as the location, shape, and spread of the distribution.
 
 ## Question 3
 **Create histograms of these data with with different breaks.**
-```{r out.width='80%', fig.asp=.75, fig.align='center'}
+
+```r
 hist(days, breaks = c(0, 500, 1500, 2500, 3500, 4500), freq = F)
+```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+```r
 hist(days, breaks = c(0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500), freq = F)
 ```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-3-2} \end{center}
 
 While the first histogram shows us a rough shape and distribution, the second histogram is more detailed with more breaks. We can easily identify the modes of distribution using histograms and acquire a basic shape of the distribution as well.
 
 ## Question 4
 **Create a stem-and-leaf plot of the data.**
-```{r}
+
+```r
 stem(days)
+```
+
+```
+## 
+##   The decimal point is 3 digit(s) to the right of the |
+## 
+##   0 | 02
+##   0 | 599
+##   1 | 000344
+##   1 | 555555555555555579
+##   2 | 00
+##   2 | 78999999999999
+##   3 | 
+##   3 | 
+##   4 | 4
 ```
 We could conclude from this plot that the shape of this dataset follows a bimodal distribution, where a lot of values in the data fall around 1500 and 2900.
 
 ## Question 5
 **Create a dot plot of the data.**
-```{r out.width='80%', fig.asp=.75, fig.align='center'}
+
+```r
 stripchart(days, method = "stack", at = 0, offset = 1, pch = 16, xlab = "Mysterious Variable (Days)")
-``` 
+```
+
+
+
+\begin{center}\includegraphics[width=0.8\linewidth]{_main_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 The dot plot confirms our conclusion from the stem-and-leaf plot stated above.
 
 ## Question 6
 **Find if there are any outliers in this dataset.**
-```{r}
+
+```r
 IQR <- IQR(days)
 UpperBound <- 2921 + 1.5 * IQR
 LowerBound <- 1460 - 1.5 * IQR
 UpperBound
+```
+
+```
+## [1] 5091.125
+```
+
+```r
 LowerBound
+```
+
+```
+## [1] -710.125
 ```
 All the values from the data fall in the range $\in [-710.125, 5091.125]$. Therefore, there aren’t any outliers. Since 2922 days are approximately equivalent to 8 years, these data might represent the time it takes for people to get a Ph.D., the 8-year cycle of Venus, or the length of the presidency of the United States.
 
@@ -254,16 +319,40 @@ Let X be the number of heads in 2 independent tosses of a fair coin. \
 Let random variable $Y = \frac{1}{1+X}$, \
 Possible outcomes:\
 
-```{r echo = FALSE, results = "asis"}
-options(kableExtra.latex.load_packages = FALSE)
-library(kableExtra)
-library(knitr)
-df <- matrix(c(0, 1, 1, "$\\frac{1}{4}$", "$\\frac{1}{4}$", 1, "$\\frac{1}{2}$", "$\\frac{1}{4}$", "$\\frac{1}{2}$", "$\\frac{1}{2}$", 2, "$\\frac{1}{3}$", "$\\frac{1}{9}$", "$\\frac{1}{4}$", "$\\frac{1}{4}$"),
-             nrow = 5)
-rownames(df) = c("$x$", "$y$", "$y^2$", "$P(X=x)$", "$P(Y=y)$")
-kable(df, format = "html", booktabs = TRUE, escape = FALSE, align = "cccc") %>%
-  kable_styling(latex_options = "striped", position = "center") 
-```
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<tbody>
+  <tr>
+   <td style="text-align:left;"> $x$ </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $y$ </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> $\frac{1}{2}$ </td>
+   <td style="text-align:center;"> $\frac{1}{3}$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $y^2$ </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> $\frac{1}{4}$ </td>
+   <td style="text-align:center;"> $\frac{1}{9}$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $P(X=x)$ </td>
+   <td style="text-align:center;"> $\frac{1}{4}$ </td>
+   <td style="text-align:center;"> $\frac{1}{2}$ </td>
+   <td style="text-align:center;"> $\frac{1}{4}$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> $P(Y=y)$ </td>
+   <td style="text-align:center;"> $\frac{1}{4}$ </td>
+   <td style="text-align:center;"> $\frac{1}{2}$ </td>
+   <td style="text-align:center;"> $\frac{1}{4}$ </td>
+  </tr>
+</tbody>
+</table>
 $$\therefore \mathbb{E}(\frac{1}{1+X}) = \sum (\frac{1}{1+x_i})P(X = x_i) = \mathbb{E}(Y) = 1 \cdot \frac{1}{4} + \frac{1}{2} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{4} = \frac{7}{12}$$ 
 
 **(b)** Show that $\mathbb{E}(\frac{1}{1+X}) \neq \frac{1}{1+\mathbb{E}(X)}$. \
@@ -401,7 +490,8 @@ The expected value of $T$ approximately equals to $e$, i.e., $\mathbb{E}(T) \app
 
 We can prove this statement by running an R simulation:
 
-```{r}
+
+```r
 T <- function() {
   n = 0
   t = 0
@@ -414,8 +504,9 @@ T <- function() {
 Expected_Value = mean(replicate(100000, T()))
 ```
 
-```{r echo = F}
-cat("E(T) =", Expected_Value)
+
+```
+## E(T) = 2.72058
 ```
 
 
@@ -433,20 +524,22 @@ person was asked whether they had no vaccine, 1 flu vaccine injection or 2 flu v
 * Let $F$ be a random variable indicating whether the person did have flu ($F = 1$) or not ($F = 0$).
 
 ## Contingency Table
-```{r, echo = F}
-data = matrix(c(24, 9, 13, 289, 100, 565), nrow = 2, byrow = TRUE)
-rownames(data) <- c("F = 1", "F = 0")
-colnames(data) <- c("V = 0", "V = 1", "V = 2")
-xsq <- chisq.test(data)
+\begin{table}
 
-con_table <- addmargins(data)
-for (i in 1:2) {
-  for (j in 1:3) {
-    con_table[i,j] <- paste(data[i,j], paste0("(", xsq$expected[i,j], ")"))
-  }
-}
-knitr::kable(con_table, caption = "Contingency Table with Expected Frequencies")
-```
+\caption{(\#tab:unnamed-chunk-10)Contingency Table with Expected Frequencies}
+\centering
+\begin{tabular}[t]{l|l|l|l|l}
+\hline
+  & V = 0 & V = 1 & V = 2 & Sum\\
+\hline
+F = 1 & 24 (14.398) & 9 (5.014) & 13 (26.588) & 46\\
+\hline
+F = 0 & 289 (298.602) & 100 (103.986) & 565 (551.412) & 954\\
+\hline
+Sum & 313 & 109 & 578 & 1000\\
+\hline
+\end{tabular}
+\end{table}
 
 ## Expected Frequencies 
 **Estimate the expected frequencies under the assumption that $V$ and $F$ are independent.** \
@@ -465,10 +558,20 @@ $$\hat{\mu}_{22} = 109 - 5.014 = 103.986$$
 $$\hat{\mu}_{23} = 578 - 26.588 = 551.412$$
 
 ## Pearson Residuals
-```{r echo = F}
-options(scipen = 1, digits = 2)
-knitr::kable(xsq$residuals, caption = "Pearson Residuals")
-```
+\begin{table}
+
+\caption{(\#tab:unnamed-chunk-11)Pearson Residuals}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & V = 0 & V = 1 & V = 2\\
+\hline
+F = 1 & 2.53 & 1.78 & -2.64\\
+\hline
+F = 0 & -0.56 & -0.39 & 0.58\\
+\hline
+\end{tabular}
+\end{table}
 
 $$r_{11}^{P} = \frac{24 - 14.398}{\sqrt{14.398}} = 2.53$$
 $$r_{12}^{P} = \frac{9 - 5.014}{\sqrt{5.014}} = 1.78$$
@@ -478,18 +581,20 @@ $$r_{22}^{P} = \frac{100 - 103.986}{\sqrt{103.986}} = -0.39$$
 $$r_{23}^{P} = \frac{565 - 551.412}{\sqrt{551.412}} = 0.58$$
 
 ##  Standardized Pearson Residuals
-```{r echo = F}
-options(scipen = 1, digits = 3)
-stdres <- xsq$residuals
+\begin{table}
 
-for (i in 1:2) {
-  for (j in 1:3) {
-    stdres[i,j] = stdres[i,j] / sqrt((1-as.numeric(con_table[i,4])/1000)*(1-as.numeric(con_table[3,j])/1000))
-  }
-}  
-  
-knitr::kable(stdres, caption = "Standardized Pearson Residuals")
-```
+\caption{(\#tab:unnamed-chunk-12)Standardized Pearson Residuals}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & V = 0 & V = 1 & V = 2\\
+\hline
+F = 1 & 3.13 & 1.93 & -4.15\\
+\hline
+F = 0 & -3.13 & -1.93 & 4.15\\
+\hline
+\end{tabular}
+\end{table}
 
 $$r_{11}^{S} = \frac{r_{11}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+1})}} = \frac{2.53}{\sqrt{(1-0.046)(1-0.313)}} = 3.13$$
 $$r_{12}^{S} = \frac{r_{12}^{P}} {\sqrt{(1-\hat{p}_{1+})(1-\hat{p}_{+2})}} = \frac{1.78}{\sqrt{(1-0.046)(1-0.109)}} = 1.93$$
@@ -512,34 +617,51 @@ $$\begin{aligned}
 
 We can plot the Chi-Square Density function: \
 
-```{r echo = F}
-curve(dchisq(x, df = 2), from = 0, to = 20, 
-      xlab = "Chi-Square", ylab = "Density", main = "Chi-Square Density (Degree of Freedom = 2)")
-abline(v = 17.32, lty = 3)
-```
+![](_main_files/figure-latex/unnamed-chunk-13-1.pdf)<!-- --> 
  
 By inspecting the plot, we find that $P(\chi_{2}^{2} \geq 17.32)$ is extremely small. We can use R to confirm that $P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005$ (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.
 
 On the other hand, we can conduct the Chi-Square Test using R directly:
-```{r, comment = NA, echo = F}
-chisq.test(data)
+
+```
+
+	Pearson's Chi-squared test
+
+data:  data
+X-squared = 17, df = 2, p-value = 0.0002
 ```
 Since the p-value calculated by R is $0.000174 \ll 0.005$, which is small enough to reject the null hypothesis, we can prove that there is an association between the number of flu injections and catching flu. \
 
 **Method 2**: We can test the association by estimating the conditional probabilities.
-```{r echo = F}
-options(scipen = 1, digits = 2)
-library(knitr)
-estimated_con_prob <- matrix(c(24/46, 289/954, 9/46, 100/954, 13/46, 565/954), nrow = 2)
-rownames(estimated_con_prob) <- c("$\\hat{P}(V = i \\mid F = 1)$", "$\\hat{P}(V = i \\mid F = 0)$")
-colnames(estimated_con_prob) <- c("$i = 0$", "$i = 1$", "$i = 2$")
-kable(estimated_con_prob, escape = F, caption = "Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not")
+\begin{table}
 
-estimated_con_prob_2 <- matrix(c(24/313, 289/313, 9/109, 100/109, 13/578, 565/578), nrow = 2)
-rownames(estimated_con_prob_2) <- c("$\\hat{P}(F = 1 \\mid V = i)$", "$\\hat{P}(F = 0 \\mid V = i)$")
-colnames(estimated_con_prob_2) <- c("$i = 0$", "$i = 1$", "$i = 2$")
-kable(estimated_con_prob_2, escape = F, caption = "Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected")
-```
+\caption{(\#tab:unnamed-chunk-15)Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & $i = 0$ & $i = 1$ & $i = 2$\\
+\hline
+$\hat{P}(V = i \mid F = 1)$ & 0.52 & 0.2 & 0.28\\
+\hline
+$\hat{P}(V = i \mid F = 0)$ & 0.30 & 0.1 & 0.59\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{(\#tab:unnamed-chunk-15)Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+  & $i = 0$ & $i = 1$ & $i = 2$\\
+\hline
+$\hat{P}(F = 1 \mid V = i)$ & 0.08 & 0.08 & 0.02\\
+\hline
+$\hat{P}(F = 0 \mid V = i)$ & 0.92 & 0.92 & 0.98\\
+\hline
+\end{tabular}
+\end{table}
 
 We can either compare the estimated conditional probabilities of the doses of vaccines injected given having flu or not presented in the table above (Table 4), or do it the other way around (Table 5). We can clearly see that a large proportion of people who caught flu did not inject the vaccine, while about $70\%$ of people who didn't catch flu at least injected one dose of vaccine. On the other hand, we can conclude that the proportion of people who injected one dose of vaccine catching flu is the same as the proportion of people who didn't inject vaccines at all catching flu. But the proportion of people catching flu among those who injected two doses of vaccines has decreased significantly (a quarter comparing to the former ones). Therefore, there is an obvious association between doses of vaccines injected and catching flu or not. Injecting both doses of vaccines may effectively reduce the risk of catching flu, while on the other hand, injecting merely one dose of vaccine may not necessarily be effective.
 
