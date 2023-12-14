@@ -88,12 +88,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 We can plot the Chi-Square Density function: \
-
-```{r echo = F}
-curve(dchisq(x, df = 2), from = 0, to = 20, 
-      xlab = "Chi-Square", ylab = "Density", main = "Chi-Square Density (Degree of Freedom = 2)")
-abline(v = 17.32, lty = 3)
-```
+![](unnamed-chunk-6-1.png)
  
 By inspecting the plot, we find that $P(\chi_{2}^{2} \geq 17.32)$ is extremely small. We can use R to confirm that $P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005$ (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.
 

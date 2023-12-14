@@ -456,8 +456,7 @@ If the null hypothesis <span class="math inline">\(H_0\)</span> is true, and all
   &amp;= 17.32
 \end{aligned}\]</span></p>
 <p>We can plot the Chi-Square Density function:<br />
-</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<img src="unnamed-chunk-6-1.png" /></p>
 <p>By inspecting the plot, we find that <span class="math inline">\(P(\chi_{2}^{2} \geq 17.32)\)</span> is extremely small. We can use R to confirm that <span class="math inline">\(P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005\)</span> (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.</p>
 <p>On the other hand, we can conduct the Chi-Square Test using R directly:</p>
 <pre><code>
@@ -470,7 +469,7 @@ X-squared = 17, df = 2, p-value = 0.0002</code></pre>
 <strong>Method 2</strong>: We can test the association by estimating the conditional probabilities.
 <table>
 <caption>
-<span id="tab:unnamed-chunk-12">Table 8.4: </span>Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not
+<span id="tab:unnamed-chunk-11">Table 8.4: </span>Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not
 </caption>
 <thead>
 <tr>
@@ -520,7 +519,7 @@ X-squared = 17, df = 2, p-value = 0.0002</code></pre>
 </table>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-12">Table 8.4: </span>Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected
+<span id="tab:unnamed-chunk-11">Table 8.4: </span>Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected
 </caption>
 <thead>
 <tr>

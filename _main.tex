@@ -624,7 +624,7 @@ We can prove this statement by running an R simulation:
 \end{Shaded}
 
 \begin{verbatim}
-## E(T) = 2.71368
+## E(T) = 2.71942
 \end{verbatim}
 
 \chapter{Exercise 8}\label{exercise-8}
@@ -747,8 +747,7 @@ If the null hypothesis \(H_0\) is true, and all the \(\hat{\mu}_{ij}\) are large
 \end{aligned}\]
 
 We can plot the Chi-Square Density function:\\
-
-\includegraphics{_main_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics{unnamed-chunk-6-1.png}
 
 By inspecting the plot, we find that \(P(\chi_{2}^{2} \geq 17.32)\) is extremely small. We can use R to confirm that \(P(\chi_{2}^{2} \geq 17.32) = 0.000173 \ll 0.005\) (using pchisq(17.32, 2, lower.tail = F)). Therefore, since the p-value is within the given significance level, we reject the null hypothesis.
 
@@ -768,7 +767,7 @@ Since the p-value calculated by R is \(0.000174 \ll 0.005\), which is small enou
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-12}Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not}
+\caption{\label{tab:unnamed-chunk-11}Estimated Conditional Probabilities of the Number of Doses of Vaccines Injected Given Catching the Flu or Not}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
@@ -783,7 +782,7 @@ $\hat{P}(V = i \mid F = 0)$ & 0.30 & 0.1 & 0.59\\
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-12}Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected}
+\caption{\label{tab:unnamed-chunk-11}Estimated Conditional Probabilities of Catching the Flu or Not Given Number of Doses of Vaccines Injected}
 \centering
 \begin{tabular}[t]{l|r|r|r}
 \hline
