@@ -38,19 +38,17 @@ q_U^y - q_L^y &= a(x_{\frac{3}{4}(n+1)} - x_{\frac{1}{4}(n+1)}) \\
 
 ## Question 3 - Shape
 **(a) Standardized Sample Skewnewss**
-$$\require{cancel}
-\begin{aligned} 
+$$\begin{aligned} 
 Skewness_x &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{S_x^3} \\
 Skewness_y &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (y_i - \bar{y})^3}{S_y^3} \\
-Skewness_y &= \frac{1}{n} \cdot \frac{\cancel{a^3} \cdot \sum_{i=1}^{n} (x_i - \bar{x})^3}{\cancel{a^3} \cdot S_x^3} \\
+Skewness_y &= \frac{1}{n} \cdot \frac{a^3 \cdot \sum_{i=1}^{n} (x_i - \bar{x})^3}{a^3 \cdot S_x^3} \\
 \therefore Skewness_y &= Skewness_x
 \end{aligned}$$
 **(b) Sample Quartile Skewness**
-$$\require{cancel}
-\begin{aligned}
+$$\begin{aligned}
 Skewness_x &= \frac{(q_U^x - m_x) - (m_x - q_L^x)}{q_U^x - q_L^x} \\
 Skewness_y &= \frac{(q_U^y - m_y) - (m_y - q_L^y)}{q_U^y - q_L^y} \\
-Skewness_y &= \frac{\cancel{a}((q_U^x - m_x) - (m_x - q_L^x))}{\cancel{a}(q_U^x - q_L^x)} \\
+Skewness_y &= \frac{a((q_U^x - m_x) - (m_x - q_L^x))}{a(q_U^x - q_L^x)} \\
 \therefore Skewness_y &= Skewness_x
 \end{aligned}$$
 **(c) Summary: ** The above results about standardized sample skewness and sample quartile skewness are correct based on mathematical proof.

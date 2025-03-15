@@ -105,7 +105,6 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \AtBeginDocument{\renewcommand{\chaptername}{Week}}
-\usepackage{cancel}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \ifLuaTeX
@@ -292,19 +291,17 @@ q_U^y - q_L^y &= a(x_{\frac{3}{4}(n+1)} - x_{\frac{1}{4}(n+1)}) \\
 \section{Question 3 - Shape}\label{question-3---shape}
 
 \textbf{(a) Standardized Sample Skewnewss}
-\[\require{cancel}
-\begin{aligned} 
+\[\begin{aligned} 
 Skewness_x &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{S_x^3} \\
 Skewness_y &= \frac{1}{n} \cdot \frac{\sum_{i=1}^{n} (y_i - \bar{y})^3}{S_y^3} \\
-Skewness_y &= \frac{1}{n} \cdot \frac{\cancel{a^3} \cdot \sum_{i=1}^{n} (x_i - \bar{x})^3}{\cancel{a^3} \cdot S_x^3} \\
+Skewness_y &= \frac{1}{n} \cdot \frac{a^3 \cdot \sum_{i=1}^{n} (x_i - \bar{x})^3}{a^3 \cdot S_x^3} \\
 \therefore Skewness_y &= Skewness_x
 \end{aligned}\]
 \textbf{(b) Sample Quartile Skewness}
-\[\require{cancel}
-\begin{aligned}
+\[\begin{aligned}
 Skewness_x &= \frac{(q_U^x - m_x) - (m_x - q_L^x)}{q_U^x - q_L^x} \\
 Skewness_y &= \frac{(q_U^y - m_y) - (m_y - q_L^y)}{q_U^y - q_L^y} \\
-Skewness_y &= \frac{\cancel{a}((q_U^x - m_x) - (m_x - q_L^x))}{\cancel{a}(q_U^x - q_L^x)} \\
+Skewness_y &= \frac{a((q_U^x - m_x) - (m_x - q_L^x))}{a(q_U^x - q_L^x)} \\
 \therefore Skewness_y &= Skewness_x
 \end{aligned}\]
 \textbf{(c) Summary: } The above results about standardized sample skewness and sample quartile skewness are correct based on mathematical proof.
@@ -396,11 +393,10 @@ Therefore, the percentage of alcohol drinkers having high blood pressure can be 
 \section{Question 3}\label{question-3-2}
 
 Suppose that \(A\) and \(B\) are two events with \(P(A) > 0\) and \(P(B) > 0\). Suppose, in addition, that \(P(A \mid B) < P(A)\). Using Bayes' Theorem, or otherwise, show that \(P(B \mid A) < P(B\). Interpret this result using words.
-\(\require{cancel}\)
 \[P(A \mid B) < P(A)\]
 \[\frac{P(B \mid A) \cdot P(A)}{P(B)} < P(B)\]
 \[\because P(A) > 0, P(B) > 0\]
-\[\therefore \frac{P(B \mid A) \cdot \cancel{P(B)} \cdot \cancel{P(A)}}{\cancel{P(B)} \cdot \cancel{P(A)}} < \frac{\cancel{P(A)} \cdot P(B)}{\cancel{P(A)}}\]
+\[\therefore \frac{P(B \mid A) \cdot P(B) \cdot P(A)}{P(B) \cdot P(A)} < \frac{P(A) \cdot P(B)}{P(A)}\]
 \[\therefore P(B \mid A) < P(B)\]
 Interpretation: the conditional probability will always be less than or at least equal to the total proabability of an event.
 
@@ -624,7 +620,7 @@ We can prove this statement by running an R simulation:
 \end{Shaded}
 
 \begin{verbatim}
-## E(T) = 2.71942
+E(T) = 2.7119
 \end{verbatim}
 
 \chapter{Exercise 8}\label{exercise-8}

@@ -21,7 +21,7 @@ T <- function() {
 Expected_Value = mean(replicate(100000, T()))
 ```
 
-```{r echo = F}
+```{r echo = F, comment = ''}
 cat("E(T) =", Expected_Value)
 ```
 

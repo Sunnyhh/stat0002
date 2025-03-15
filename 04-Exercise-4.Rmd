@@ -19,11 +19,10 @@ $$P(B_1 \mid A) = \frac{P(A \mid B_1) \cdot P(B_1))}{P(A)} = \frac{0.75 \cdot 0.
 
 ## Question 3
 Suppose that $A$ and $B$ are two events with $P(A) > 0$ and $P(B) > 0$. Suppose, in addition, that $P(A \mid B) < P(A)$. Using Bayes' Theorem, or otherwise, show that $P(B \mid A) < P(B$. Interpret this result using words.
-$\require{cancel}$
 $$P(A \mid B) < P(A)$$
 $$\frac{P(B \mid A) \cdot P(A)}{P(B)} < P(B)$$
 $$\because P(A) > 0, P(B) > 0$$
-$$\therefore \frac{P(B \mid A) \cdot \cancel{P(B)} \cdot \cancel{P(A)}}{\cancel{P(B)} \cdot \cancel{P(A)}} < \frac{\cancel{P(A)} \cdot P(B)}{\cancel{P(A)}}$$
+$$\therefore \frac{P(B \mid A) \cdot P(B) \cdot P(A)}{P(B) \cdot P(A)} < \frac{P(A) \cdot P(B)}{P(A)}$$
 $$\therefore P(B \mid A) < P(B)$$
 Interpretation: the conditional probability will always be less than or at least equal to the total proabability of an event.
 
